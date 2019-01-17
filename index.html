@@ -15,15 +15,15 @@
 <body>
 
 <div class="bg-gray grid-container fluid">
-  <div class="grid-x grid-padding-x grid-margin-x">
+  <div class="grid-x">
     <div class="cell small-4">
       <!-- Name Form -->
       <label> Name
         <input type="text" placeholder="Your Name">
       </label>
-      <!-- desired post -->
-      <label> Desired Post
-        <input type="text" placeholder="Desired Post">
+      <!-- desired job -->
+      <label> Desired job
+        <input type="text" placeholder="Desired job">
       </label>
       <div class="grid-x grid-margin-x">
         <div class="cell small-6">
@@ -57,6 +57,7 @@
         <div class="grid-x">
           <div class="cell small-4">
             <select name="Social-Media" id="Social-Media">
+              <option value="" disabled>Select</option>
               <option value="linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</option>
               <option value="github"><i class="fab fa-github-square"></i> GitHub</option>
               <option value="facebook"><i class="fab fa-facebook"></i> Facebook</option>
@@ -73,134 +74,122 @@
         </div>
       </label>
       <!-- end Social Media -->
+
       <!-- Resume -->
-      <h1>Resume</h1>
-      <textarea name="" cols="30" rows="3" placeholder="Your Resume..."></textarea>
+      <label>Resume
+      <textarea name="" placeholder="Your Resume..."></textarea>
+      </label>
       <!-- end Resume -->
-      <!-- Experiences -->
-      <div class="grid-x">
-        <div class="cell small-11">
-          <h1> Experiences </h1>
-        </div>
-        <div class="cell small-1">
-          <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
-        </div>
-      </div>
-      <!-- Role -->
-      <label> Role
-        <input type="text" placeholder="Your Role">
-      </label>
-      <div class="grid-x grid-padding-x">
-        <div class="cell small-6">
-          <!-- From -->
-          <label> From
-            <input type="date" placeholder="From">
-          </label>
-        </div>
-        <div class="cell small-6">
-          <!-- To -->
-          <label> To
-            <input type="date" placeholder="To">
-          </label>
-        </div>
-      </div>
-      <!-- Experience Description -->
-      <label> Description
-        <textarea name="" cols="30" rows="5" placeholder="Describe Your Experience"></textarea>
-      </label>
-      <!-- end Experiences -->
 
-      <!-- Projects -->
-      <div class="grid-x">
-        <div class="cell small-11">
-          <h1> Projects </h1>
+      <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
+        <li class="tabs-title is-active"><a href="#experiences" aria-selected="true"><i class="fas fa-briefcase"></i> Experiences</a></li>
+        <li class="tabs-title"><a href="#projects"><i class="fas fa-hammer"></i> Projects</a></li>
+        <li class="tabs-title"><a href="#educations"><i class="fas fa-university"></i> Educations</a></li>
+        <li class="tabs-title"><a href="#skills"><i class="fas fa-brain"></i> Skills</a></li>
+      </ul>
+      <div class="tabs-content" data-tabs-content="collapsing-tabs">
+        <div class="tabs-panel is-active" id="experiences">
+          <!-- Role -->
+          <label> Role
+            <input type="text" placeholder="Your Role">
+          </label>
+          <div class="grid-x">
+            <div class="cell small-6">
+              <!-- From -->
+              <label> From
+                <input type="date" placeholder="From">
+              </label>
+            </div>
+            <div class="cell small-6">
+              <!-- To -->
+              <label> To
+                <input type="date" placeholder="To">
+              </label>
+            </div>
+          </div>
+          <!-- Experience Description -->
+          <label> Description
+            <textarea name="" placeholder="Describe Your Experience"></textarea>
+          </label>
+          <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
         </div>
-        <div class="cell small-1">
+        <div class="tabs-panel" id="projects">
+          <!-- Role -->
+          <label> Name
+            <input type="text" placeholder="Your Project Name">
+          </label>
+          <div class="grid-x">
+            <div class="cell small-6">
+              <!-- From -->
+              <label> From
+                <input type="date" placeholder="From">
+              </label>
+            </div>
+            <div class="cell small-6">
+              <!-- To -->
+              <label> To
+                <input type="date" placeholder="To">
+              </label>
+            </div>
+          </div>
+          <!-- Projects Description -->
+          <label> Description
+            <textarea name="" placeholder="Describe Your Project"></textarea>
+          </label>
+          <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+        </div>
+        <div class="tabs-panel" id="educations">
+          <!-- Role -->
+          <label> Title
+            <input type="text" placeholder="Title">
+          </label>
+          <div class="grid-x">
+            <div class="cell small-6">
+              <!-- From -->
+              <label> From
+                <input type="date" placeholder="From">
+              </label>
+            </div>
+            <div class="cell small-6">
+              <!-- To -->
+              <label> To
+                <input type="date" placeholder="To">
+              </label>
+            </div>
+          </div>
+          <!-- Education Description -->
+          <label> Description
+            <textarea name="" placeholder="Describe Your Education"></textarea>
+          </label>
+          <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+        </div>
+        <div class="tabs-panel" id="skills">
+          <div class="grid-x">
+            <div class="cell small-8">
+              <input type="text" placeholder="Your Level">
+            </div>
+            <div class="cell small-4">
+              <label for="Levels"></label>
+              <select name="Level" id="Levels" required>
+                <option disabled selected>Levels</option>
+                <option value="1">Debutant</option>
+                <option value="2">Pro</option>
+                <option value="3">Expert</option>
+              </select>
+            </div>
+            <!--<div class="cell small-1">-->
+              <!--<button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>-->
+            <!--</div>-->
+          </div>
           <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
         </div>
       </div>
-      <!-- Role -->
-      <label> Name
-        <input type="text" placeholder="Your Project Name">
-      </label>
-      <div class="grid-x grid-padding-x">
-        <div class="cell small-6">
-          <!-- From -->
-          <label> From
-            <input type="date" placeholder="From">
-          </label>
-        </div>
-        <div class="cell small-6">
-          <!-- To -->
-          <label> To
-            <input type="date" placeholder="To">
-          </label>
-        </div>
-      </div>
-      <!-- Projects Description -->
-      <label> Description
-        <textarea name="" id="" cols="30" rows="5" placeholder="Describe Your Project"></textarea>
-      </label>
-      <!-- end Project -->
-
-      <!-- Education -->
-      <div class="grid-x">
-        <div class="cell small-11">
-          <h1> Education </h1>
-        </div>
-        <div class="cell small-1">
-          <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
-        </div>
-      </div>
-      <!-- Role -->
-      <label> Title
-        <input type="text" placeholder="Title">
-      </label>
-      <div class="grid-x grid-padding-x">
-        <div class="cell small-6">
-          <!-- From -->
-          <label> From
-            <input type="date" placeholder="From">
-          </label>
-        </div>
-        <div class="cell small-6">
-          <!-- To -->
-          <label> To
-            <input type="date" placeholder="To">
-          </label>
-        </div>
-      </div>
-      <!-- Education Description -->
-      <label> Description
-        <textarea name="" cols="30" rows="5" placeholder="Describe Your Education"></textarea>
-      </label>
-      <!-- end Education -->
-      <!-- Skills -->
-      <h1> Skills </h1>
-      <div class="grid-x">
-        <div class="cell small-7">
-          <input type="text" placeholder="Your Level">
-        </div>
-        <div class="cell small-4">
-          <select name="Level" id="Levels" >
-            <option disabled selected>Levels</option>
-            <option value="1">Debutant</option>
-            <option value="2">Pro</option>
-            <option value="3">Expert</option>
-          </select>
-        </div>
-        <div class="cell small-1">
-          <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
-        </div>
-      </div>
-      <!-- end Skills -->
     </div>
-    <div class="cell small-8">
-    </div>
+  </div>
+  <div class="cell small-8">
   </div>
 </div>
 
-<!-- foundation scripts -->
 <script src="js/vendor/jquery.js"></script>
 <script src="js/vendor/what-input.js"></script>
 <script src="js/vendor/foundation.js"></script>
