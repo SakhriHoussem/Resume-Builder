@@ -1,193 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cv Generator</title>
-  <!-- foundation styles -->
-  <link rel="stylesheet" href="css/foundation.css">
-  <!-- fontawesome styles -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <!-- main app styles -->
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cv Generator</title>
+    <!-- foundation styles -->
+    <link rel="stylesheet" href="css/foundation.css">
+    <!-- fontawesome styles -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- main app styles -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 
 <div class="bg-gray grid-container fluid">
-  <div class="grid-x">
-    <div class="cell small-4">
-      <!-- Name Form -->
-      <label> Name
-        <input type="text" placeholder="Your Name">
-      </label>
-      <!-- desired job -->
-      <label> Desired job
-        <input type="text" placeholder="Desired job">
-      </label>
-      <div class="grid-x grid-margin-x">
-        <div class="cell small-6">
-          <!-- Email -->
-          <label> Email
-            <input type="email" placeholder="Your Email">
-          </label>
-        </div>
-        <div class="cell small-6">
-          <!-- Phone -->
-          <label> Phone
-            <input type="tel" placeholder="Your Phone">
-          </label>
-        </div>
-      </div>
-      <!-- Links -->
-      <label> Links
-        <div class="grid-x ">
-          <div class="cell small-11">
-            <input type="url" placeholder="Your Site/Blog Link">
-          </div>
-          <div class="cell small-1">
-            <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
-          </div>
-        </div>
-      </label>
-      <!-- end Links -->
+    <div class="grid-x grid-padding-x">
+        <div class="cell small-4 ">
+            <!-- Name Form -->
+            <label> Name
+                <input type="text" placeholder="Your Name">
+            </label>
+            <!-- desired job -->
+            <label> Desired job
+                <input type="text" placeholder="Desired job">
+            </label>
+            <div class="grid-x grid-margin-x">
+                <div class="cell small-6">
+                    <!-- Email -->
+                    <label> Email
+                        <input type="email" placeholder="Your Email">
+                    </label>
+                </div>
+                <div class="cell small-6">
+                    <!-- Phone -->
+                    <label> Phone
+                        <input type="tel" placeholder="Your Phone">
+                    </label>
+                </div>
+            </div>
+            <!-- Links -->
+            <label> Links
+                <div class="grid-x ">
+                    <div class="cell small-11">
+                        <input type="url" placeholder="Your Site/Blog Link">
+                    </div>
+                    <div class="cell small-1">
+                        <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                    </div>
+                </div>
+            </label>
+            <!-- end Links -->
 
-      <!-- Social Media -->
-      <label> Social Media
-        <div class="grid-x">
-          <div class="cell small-4">
-            <select name="Social-Media" id="Social-Media">
-              <option value="" disabled>Select</option>
-              <option value="linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</option>
-              <option value="github"><i class="fab fa-github-square"></i> GitHub</option>
-              <option value="facebook"><i class="fab fa-facebook"></i> Facebook</option>
-              <option value="twitter"><i class="fab fa-twitter"></i> Twitter</option>
-              <option value="gitlab"><i class="fab fa-gitlab"></i> GitLab</option>
-            </select>
-          </div>
-          <div class="cell small-7">
-            <input type="url" placeholder="Your Social Media">
-          </div>
-          <div class="cell small-1">
-            <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
-          </div>
-        </div>
-      </label>
-      <!-- end Social Media -->
+            <!-- Social Media -->
+            <label> Social Media
+                <div class="grid-x">
+                    <div class="cell small-4">
+                        <select name="Social-Media" id="Social-Media">
+                            <option value="" disabled>Select</option>
+                            <option value="linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</option>
+                            <option value="github"><i class="fab fa-github-square"></i> GitHub</option>
+                            <option value="facebook"><i class="fab fa-facebook"></i> Facebook</option>
+                            <option value="twitter"><i class="fab fa-twitter"></i> Twitter</option>
+                            <option value="gitlab"><i class="fab fa-gitlab"></i> GitLab</option>
+                        </select>
+                    </div>
+                    <div class="cell small-7">
+                        <input type="url" placeholder="Your Social Media">
+                    </div>
+                    <div class="cell small-1">
+                        <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                    </div>
+                </div>
+            </label>
+            <!-- end Social Media -->
 
-      <!-- Resume -->
-      <label>Resume
-      <textarea name="" placeholder="Your Resume..."></textarea>
-      </label>
-      <!-- end Resume -->
+            <!-- Resume -->
+            <label>Resume
+                <textarea name="" placeholder="Your Resume..."></textarea>
+            </label>
+            <!-- end Resume -->
 
-      <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
-        <li class="tabs-title is-active"><a href="#experiences" aria-selected="true"><i class="fas fa-briefcase"></i> Experiences</a></li>
-        <li class="tabs-title"><a href="#projects"><i class="fas fa-hammer"></i> Projects</a></li>
-        <li class="tabs-title"><a href="#educations"><i class="fas fa-university"></i> Educations</a></li>
-        <li class="tabs-title"><a href="#skills"><i class="fas fa-brain"></i> Skills</a></li>
-      </ul>
-      <div class="tabs-content" data-tabs-content="collapsing-tabs">
-        <div class="tabs-panel is-active" id="experiences">
-          <!-- Role -->
-          <label> Role
-            <input type="text" placeholder="Your Role">
-          </label>
-          <div class="grid-x">
-            <div class="cell small-6">
-              <!-- From -->
-              <label> From
-                <input type="date" placeholder="From">
-              </label>
+            <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
+                <li class="tabs-title is-active"><a href="#experiences" aria-selected="true"><i
+                        class="fas fa-briefcase"></i> Experiences</a></li>
+                <li class="tabs-title"><a href="#projects"><i class="fas fa-hammer"></i> Projects</a></li>
+                <li class="tabs-title"><a href="#educations"><i class="fas fa-university"></i> Educations</a></li>
+                <li class="tabs-title"><a href="#skills"><i class="fas fa-brain"></i> Skills</a></li>
+            </ul>
+            <div class="tabs-content" data-tabs-content="collapsing-tabs">
+                <div class="tabs-panel is-active" id="experiences">
+                    <!-- Role -->
+                    <label> Role
+                        <input type="text" placeholder="Your Role">
+                    </label>
+                    <div class="grid-x">
+                        <div class="cell small-6">
+                            <!-- From -->
+                            <label> From
+                                <input type="date" placeholder="From">
+                            </label>
+                        </div>
+                        <div class="cell small-6">
+                            <!-- To -->
+                            <label> To
+                                <input type="date" placeholder="To">
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Experience Description -->
+                    <label> Description
+                        <textarea name="" placeholder="Describe Your Experience"></textarea>
+                    </label>
+                    <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                </div>
+                <div class="tabs-panel" id="projects">
+                    <!-- Role -->
+                    <label> Name
+                        <input type="text" placeholder="Your Project Name">
+                    </label>
+                    <div class="grid-x">
+                        <div class="cell small-6">
+                            <!-- From -->
+                            <label> From
+                                <input type="date" placeholder="From">
+                            </label>
+                        </div>
+                        <div class="cell small-6">
+                            <!-- To -->
+                            <label> To
+                                <input type="date" placeholder="To">
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Projects Description -->
+                    <label> Description
+                        <textarea name="" placeholder="Describe Your Project"></textarea>
+                    </label>
+                    <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                </div>
+                <div class="tabs-panel" id="educations">
+                    <!-- Role -->
+                    <label> Title
+                        <input type="text" placeholder="Title">
+                    </label>
+                    <div class="grid-x">
+                        <div class="cell small-6">
+                            <!-- From -->
+                            <label> From
+                                <input type="date" placeholder="From">
+                            </label>
+                        </div>
+                        <div class="cell small-6">
+                            <!-- To -->
+                            <label> To
+                                <input type="date" placeholder="To">
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Education Description -->
+                    <label> Description
+                        <textarea name="" placeholder="Describe Your Education"></textarea>
+                    </label>
+                    <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                </div>
+                <div class="tabs-panel" id="skills">
+                    <div class="grid-x">
+                        <div class="cell small-8">
+                            <input type="text" placeholder="Your Level">
+                        </div>
+                        <div class="cell small-4">
+                            <label for="Levels"></label>
+                            <select name="Level" id="Levels" required>
+                                <option disabled selected>Levels</option>
+                                <option value="1">Debutant</option>
+                                <option value="2">Pro</option>
+                                <option value="3">Expert</option>
+                            </select>
+                        </div>
+                        <!--<div class="cell small-1">-->
+                        <!--<button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>-->
+                        <!--</div>-->
+                    </div>
+                    <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                </div>
             </div>
-            <div class="cell small-6">
-              <!-- To -->
-              <label> To
-                <input type="date" placeholder="To">
-              </label>
-            </div>
-          </div>
-          <!-- Experience Description -->
-          <label> Description
-            <textarea name="" placeholder="Describe Your Experience"></textarea>
-          </label>
-          <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
         </div>
-        <div class="tabs-panel" id="projects">
-          <!-- Role -->
-          <label> Name
-            <input type="text" placeholder="Your Project Name">
-          </label>
-          <div class="grid-x">
-            <div class="cell small-6">
-              <!-- From -->
-              <label> From
-                <input type="date" placeholder="From">
-              </label>
+        <div class="bg--light-gray cell small-8">
+            <div class="paper">
+                <div class="paper__sidebar">
+
+                    <img class="thumbnail sidebar__img" src="https://www.gravatar.com/avatar/?d=monsterid" alt="profile.">
+                    <h1 class="paper__title sidebar__name">Sakhri Houssem Eddine</h1>
+                    <h2 class="paper__title sidebar__job">Full Stack Developer</h2>
+                    <hr>
+                    <dl class="sidebar__info">
+                        <dd><i class="fas fa-at"></i> s.houssem.e@gmail.com</dd>
+                        <dd><i class="fas fa-phone"></i> 00213777850224</dd>
+                        <dd><i class="fas fa-globe-europe"></i> SakhriHoussem.me</dd>
+                        <dd><i class="fab fa-github"></i> SakhriHoussem</dd>
+                        <dd><i class="fab fa-twitter"></i> @SakhriHoussem</dd>
+                        <dd><i class="fab fa-linkedin-in"></i> SakhriHoussem</dd>
+                        <dt class="sidebar__title clearfix">Skills</dt>
+                        <dd> CSS & SASS
+                            <progress class="secondary float-right" max="100" value="90"></progress>
+                        </dd>
+                        <dd> Bootstrap
+                            <progress class="secondary float-right" max="100" value="85"></progress>
+                        </dd>
+                        <dd> Foundation
+                            <progress class="secondary float-right" max="100" value="85"></progress>
+                        </dd>
+                        <dd> PHP
+                            <progress class="secondary float-right" max="100" value="80"></progress>
+                        </dd>
+                        <dd> Symfony
+                            <progress class="secondary float-right" max="100" value="80"></progress>
+                        </dd>
+                        <dd> Python
+                            <progress class="secondary float-right" max="100" value="80"></progress>
+                        </dd>
+                        <dt class="sidebar__title">Languages</dt>
+                        <dd> Arabic</dd>
+                        <dd> French</dd>
+                        <dd> English</dd>
+                        <dt class="sidebar__title">Interests</dt>
+                        <dd> Football</dd>
+                        <dd> Film & Series</dd>
+                        <dd> Drawing</dd>
+                        <dd> Cocking</dd>
+                    </dl>
+                </div>
+                <div class="paper__main">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum facere, numquam. Cumque doloremque
+                    pariatur unde voluptas. Accusantium ad aliquam amet, architecto asperiores dolorem doloremque
+                    doloribus ducimus eligendi harum id inventore itaque laudantium odit officia pariatur placeat
+                    possimus quas quasi qui quo, similique voluptate voluptatem? Dicta dolore quae repellendus unde.
+                    Accusamus in quaerat quidem. Animi assumenda culpa cumque debitis explicabo minima numquam odit quia
+                    quod similique? Aliquam at error impedit quisquam sint suscipit tenetur! Alias aliquid aspernatur,
+                    dicta et, ipsa ipsum laudantium nobis numquam officia pariatur quam similique sint, sit. Ab adipisci
+                    aspernatur atque blanditiis debitis eum eveniet explicabo fugit hic incidunt ipsam iusto minus modi
+                    molestiae obcaecati pariatur, possimus quidem similique sunt, suscipit tempore velit voluptatibus
+                    voluptatum. Aliquid, aspernatur atque delectus id molestias nihil repellat suscipit. Blanditiis
+                    deserunt dicta dolor dolore dolorem eligendi eos et hic inventore laboriosam necessitatibus neque,
+                    nesciunt non, odit quaerat quia repellendus sint temporibus unde voluptates. A ab aliquam aut
+                    consequatur, eos et neque vel! A aut cum dolor itaque numquam obcaecati omnis qui, quibusdam, rem
+                    sequi similique voluptates? Adipisci aliquam amet atque autem consectetur distinctio earum error eum
+                    explicabo illum ipsam, iste laudantium molestiae molestias nesciunt nobis officiis praesentium quae
+                    quidem repellendus sit temporibus voluptatibus.
+                </div>
             </div>
-            <div class="cell small-6">
-              <!-- To -->
-              <label> To
-                <input type="date" placeholder="To">
-              </label>
-            </div>
-          </div>
-          <!-- Projects Description -->
-          <label> Description
-            <textarea name="" placeholder="Describe Your Project"></textarea>
-          </label>
-          <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
         </div>
-        <div class="tabs-panel" id="educations">
-          <!-- Role -->
-          <label> Title
-            <input type="text" placeholder="Title">
-          </label>
-          <div class="grid-x">
-            <div class="cell small-6">
-              <!-- From -->
-              <label> From
-                <input type="date" placeholder="From">
-              </label>
-            </div>
-            <div class="cell small-6">
-              <!-- To -->
-              <label> To
-                <input type="date" placeholder="To">
-              </label>
-            </div>
-          </div>
-          <!-- Education Description -->
-          <label> Description
-            <textarea name="" placeholder="Describe Your Education"></textarea>
-          </label>
-          <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
-        </div>
-        <div class="tabs-panel" id="skills">
-          <div class="grid-x">
-            <div class="cell small-8">
-              <input type="text" placeholder="Your Level">
-            </div>
-            <div class="cell small-4">
-              <label for="Levels"></label>
-              <select name="Level" id="Levels" required>
-                <option disabled selected>Levels</option>
-                <option value="1">Debutant</option>
-                <option value="2">Pro</option>
-                <option value="3">Expert</option>
-              </select>
-            </div>
-            <!--<div class="cell small-1">-->
-              <!--<button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>-->
-            <!--</div>-->
-          </div>
-          <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="cell small-8">
-  </div>
 </div>
 
 <script src="js/vendor/jquery.js"></script>
