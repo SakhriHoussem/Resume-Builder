@@ -1,0 +1,157 @@
+// ----------------------------------------------------
+// Size
+// ----------------------------------------------------
+
+$title-size: 1.4rem !important;
+$title-sidebar-size: 1rem !important;
+$paper-width: 59.5rem;
+$paper-height: 84.2rem;
+$text-size: .8rem;
+$time-size: .9rem;
+$title-1-size: 1.3rem;
+$title-2-size: 1.1rem;
+
+// ----------------------------------------------------
+// Colors
+// ----------------------------------------------------
+
+$bg-color: #e6e6e6;
+$sidebar-bg-color: #1779ba;
+$paper-bg-color: #fff;
+$paper-title-color: $sidebar-bg-color;
+$text-color: #26282b;
+$time-color: lighten($text-color, 40);
+
+// ----------------------------------------------------
+// Padding
+// ----------------------------------------------------
+
+$default-padding: 10px;
+$sidebar-padding: 1rem;
+
+// ----------------------------------------------------
+// Margins
+// ----------------------------------------------------
+
+$default-margin: 5px;
+$paper-title-margin-top: 1rem;
+
+// ----------------------------------------------------
+// Backgrounds
+// ----------------------------------------------------
+
+.bg--light-gray {
+  background-color: $bg-color;
+}
+
+// ----------------------------------------------------
+// paper
+// ----------------------------------------------------
+
+.paper {
+  display: table;
+  width: $paper-width;
+  min-height: $paper-height;
+  margin: auto;
+  background-color: $paper-bg-color;
+
+  &__sidebar {
+    padding: $sidebar-padding;
+    background-color: $sidebar-bg-color;
+    width: 30%;
+    display: table-cell;
+    color: $paper-bg-color;
+  }
+
+  &__main {
+    padding: $default-padding;
+    width: 65%;
+    display: table-cell;
+    h1 {
+      color: $paper-title-color;
+      font-size: $title-1-size;
+    }
+    h2 {
+      position: relative;
+      font-size: $title-2-size;
+      margin-bottom: 0;
+      margin-top: $default-margin *2;
+      small {
+        color: $time-color;
+        font-size: ($text-size + .2rem);
+        position: absolute;
+        right: 0;
+        top: 0.9rem;
+      }
+      + h3 {
+        color: $time-color;
+        font-size: $time-size;
+      }
+    }
+
+    p, ul, dd {
+      color: $text-color;
+      font-size: $text-size;
+      margin-bottom: 0;
+      padding-left: 10px;
+      text-align: justify;
+    }
+    .tags {
+      margin-left: $default-margin * 2;
+      span {
+        border-radius: 3px;
+        font-size: $text-size - .1rem;
+      }
+    }
+  }
+
+  &__title {
+    font-size: $title-size;
+  }
+}
+
+.sidebar {
+  &__title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: $title-sidebar-size;
+  }
+
+  &__name {
+    text-align: center;
+    font-weight: 600;
+  }
+  &__job {
+    color: $bg-color;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  &__img {
+    width: 50%;
+    display: block;
+    border-radius: 50%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__info {
+    dd {
+      margin: 5px;
+      font-size: $text-size;
+      i {
+        margin-right: $default-padding * 2;
+      }
+    }
+  }
+}
+
+.main {
+  &__title {
+    margin-top: $paper-title-margin-top;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+
+
