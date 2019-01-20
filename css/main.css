@@ -76,4 +76,10 @@
   text-transform: uppercase;
   font-weight: 600; }
 
+.tabs li a {
+  font-size: 1.1rem; }
+
+label {
+  font-weight: 600; }
+
 /*# sourceMappingURL=main.css.map */

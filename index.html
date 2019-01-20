@@ -19,29 +19,29 @@
     <div class="grid-x grid-padding-x">
         <div class="cell small-4 ">
             <!-- Name Form -->
-            <label> Name
+            <label> <i class="fas fa-signature"></i> Name
                 <input type="text" placeholder="Your Name">
             </label>
             <!-- desired job -->
-            <label> Desired job
+            <label> <i class="fas fa-briefcase"></i> Desired job
                 <input type="text" placeholder="Desired job">
             </label>
             <div class="grid-x grid-margin-x">
                 <div class="cell small-6">
                     <!-- Email -->
-                    <label> Email
+                    <label> <i class="fas fa-at"></i> Email
                         <input type="email" placeholder="Your Email">
                     </label>
                 </div>
                 <div class="cell small-6">
                     <!-- Phone -->
-                    <label> Phone
+                    <label> <i class="fas fa-phone"></i> Phone
                         <input type="tel" placeholder="Your Phone">
                     </label>
                 </div>
             </div>
             <!-- Links -->
-            <label> Links
+            <label> <i class="fas fa-link"></i> Links
                 <div class="grid-x ">
                     <div class="cell small-11">
                         <input type="url" placeholder="Your Site/Blog Link">
@@ -54,11 +54,11 @@
             <!-- end Links -->
 
             <!-- Social Media -->
-            <label> Social Media
+            <label> <i class="fas fa-network-wired"></i> Social Media
                 <div class="grid-x">
                     <div class="cell small-4">
                         <select name="Social-Media" id="Social-Media">
-                            <option value="" disabled>Select</option>
+                            <option value="" selected disabled>Select</option>
                             <option value="linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</option>
                             <option value="github"><i class="fab fa-github-square"></i> GitHub</option>
                             <option value="facebook"><i class="fab fa-facebook"></i> Facebook</option>
@@ -67,7 +67,7 @@
                         </select>
                     </div>
                     <div class="cell small-7">
-                        <input type="url" placeholder="Your Social Media">
+                        <input type="url" placeholder="Your Profile Link">
                     </div>
                     <div class="cell small-1">
                         <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
@@ -77,109 +77,151 @@
             <!-- end Social Media -->
 
             <!-- Resume -->
-            <label>Resume
+            <label> <i class="fas fa-pencil-alt"></i> Resume
                 <textarea name="" placeholder="Your Resume..."></textarea>
             </label>
             <!-- end Resume -->
 
             <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
-                <li class="tabs-title is-active"><a href="#experiences" aria-selected="true"><i
-                        class="fas fa-briefcase"></i> Experiences</a></li>
-                <li class="tabs-title"><a href="#projects"><i class="fas fa-hammer"></i> Projects</a></li>
+                <li class="tabs-title is-active"><a href="#experiences" aria-selected="true"><i class="fas fa-briefcase"></i> Experiences</a></li>
+                <li class="tabs-title"><a href="#projects"><i class="fas fa-box-open"></i> Projects</a></li>
                 <li class="tabs-title"><a href="#educations"><i class="fas fa-university"></i> Educations</a></li>
-                <li class="tabs-title"><a href="#skills"><i class="fas fa-brain"></i> Skills</a></li>
+                <li class="tabs-title"><a href="#skills"><i class="fas fa-wrench"></i> Skills</a></li>
+                <li class="tabs-title"><a href="#languages"><i class="fa fa-language"></i> Languages</a></li>
+                <li class="tabs-title"><a href="#interests"><i class="fas fa-plus"></i> Interests</a></li>
             </ul>
             <div class="tabs-content" data-tabs-content="collapsing-tabs">
+
+                <!-- experiences -->
                 <div class="tabs-panel is-active" id="experiences">
                     <!-- Role -->
-                    <label> Role
+                    <label> <i class="far fa-user"></i> Role
                         <input type="text" placeholder="Your Role">
+                    </label>
+                    <label> <i class="far fa-building"></i> Company
+                        <input type="text" placeholder="Your Company">
                     </label>
                     <div class="grid-x">
                         <div class="cell small-6">
                             <!-- From -->
-                            <label> From
-                                <input type="date" placeholder="From">
+                            <label> <i class="far fa-calendar-alt"></i> From
+                                <input type="month" placeholder="From">
                             </label>
                         </div>
                         <div class="cell small-6">
                             <!-- To -->
-                            <label> To
-                                <input type="date" placeholder="To">
+                            <label> <i class="far fa-calendar-alt"></i> To
+                                <input type="month" placeholder="To">
                             </label>
                         </div>
                     </div>
                     <!-- Experience Description -->
-                    <label> Description
+                    <label> <i class="fas fa-pencil-alt"></i> Description
                         <textarea name="" placeholder="Describe Your Experience"></textarea>
                     </label>
                     <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
                 </div>
+
+                <!-- projects -->
                 <div class="tabs-panel" id="projects">
                     <!-- Role -->
-                    <label> Name
+                    <label> <i class="fas fa-signature"></i> Name
                         <input type="text" placeholder="Your Project Name">
+                    </label>
+
+                    <label> <i class="fas fa-link"></i> Link
+                        <input type="url" placeholder="Your Project Link">
                     </label>
                     <div class="grid-x">
                         <div class="cell small-6">
                             <!-- From -->
-                            <label> From
-                                <input type="date" placeholder="From">
+                            <label> <i class="far fa-calendar-alt"></i> From
+                                <input type="month" placeholder="From">
                             </label>
                         </div>
                         <div class="cell small-6">
                             <!-- To -->
-                            <label> To
-                                <input type="date" placeholder="To">
+                            <label> <i class="far fa-calendar-alt"></i> To
+                                <input type="month" placeholder="To">
                             </label>
                         </div>
                     </div>
                     <!-- Projects Description -->
-                    <label> Description
+                    <label> <i class="fas fa-pencil-alt"></i> Description
                         <textarea name="" placeholder="Describe Your Project"></textarea>
                     </label>
                     <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
                 </div>
+                <!-- educations -->
                 <div class="tabs-panel" id="educations">
                     <!-- Role -->
-                    <label> Title
+                    <label>  <i class="fas fa-signature"></i> Title
                         <input type="text" placeholder="Title">
+                    </label>
+                    <label> <i class=" fa fa-university"></i>  School
+                        <input type="text" placeholder="School Name">
                     </label>
                     <div class="grid-x">
                         <div class="cell small-6">
                             <!-- From -->
-                            <label> From
-                                <input type="date" placeholder="From">
+                            <label> <i class="far fa-calendar-alt"></i> From
+                                <input type="month" placeholder="From">
                             </label>
                         </div>
                         <div class="cell small-6">
                             <!-- To -->
-                            <label> To
-                                <input type="date" placeholder="To">
+                            <label> <i class="far fa-calendar-alt"></i> To
+                                <input type="month" placeholder="To">
                             </label>
                         </div>
                     </div>
                     <!-- Education Description -->
-                    <label> Description
+                    <label> <i class="fas fa-pencil-alt"></i> Description
                         <textarea name="" placeholder="Describe Your Education"></textarea>
                     </label>
                     <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
                 </div>
+                <!-- skills -->
                 <div class="tabs-panel" id="skills">
                     <div class="grid-x">
                         <div class="cell small-8">
-                            <input type="text" placeholder="Your Level">
+                            <input type="text" placeholder="Your Skill">
                         </div>
                         <div class="cell small-4">
-                            <label for="Levels"></label>
-                            <select name="Level" id="Levels" required>
-                                <option disabled selected>Levels</option>
+                            <label for="skill_level"></label>
+                            <select name="skill_level" id="skill_level" required>
+                                <option disabled selected>Level</option>
                                 <option value="1">Debutant</option>
                                 <option value="2">Pro</option>
                                 <option value="3">Expert</option>
                             </select>
                         </div>
                     </div>
+                    <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                </div>
+
+                <!-- languages -->
+                <div class="tabs-panel" id="languages">
+                    <div class="grid-x">
+                        <div class="cell small-8">
+                            <input type="text" placeholder="Your language">
+                        </div>
+                        <div class="cell small-4">
+                            <label for="lang_Level"></label>
+                            <select name="lang_Level" id="lang_Level" required>
+                                <option disabled selected>Level</option>
+                                <option value="1">Debutant</option>
+                                <option value="2">Pro</option>
+                                <option value="3">Expert</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                </div>
+
+                <!-- Interests -->
+                <div class="tabs-panel" id="interests">
+                            <input type="text" placeholder="Your interest">
                     <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
                 </div>
             </div>
@@ -203,7 +245,7 @@
                         <dd><i class="fab fa-twitter"></i> @SakhriHoussem</dd>
                         <dd><i class="fab fa-linkedin-in"></i> SakhriHoussem</dd>
 
-                         <!-- skills -->
+                        <!-- skills -->
                         <dt class="sidebar__title clearfix"> <i class="fas fa-wrench"></i> Skills</dt>
                         <dd> CSS & SASS
                             <progress class="secondary float-right" max="100" value="90"></progress>
@@ -279,7 +321,7 @@
                                 <span class="label">CSS3</span>
                                 <span class="label">SASS</span>
                                 <span class="label">Git</span>
-                                <span class="label">Youtrack</span>
+                                <span class="label">YouTrack</span>
                                 <span class="label">SourceTree</span>
                             </div>
                         </div>
@@ -323,7 +365,7 @@
                             <h2>Master Degree in Computer Science
                                 <small>Sept 2013 - Mai 2018</small>
                             </h2>
-                            <h3>University of Science and Technologie Mohamed Boudiaf,Oran</h3>
+                            <h3>University of Science and Technologie Mohamed Boudiaf,Oran Algeria</h3>
                             <p></p>
                         </div>
 
