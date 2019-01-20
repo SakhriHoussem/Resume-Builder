@@ -20,23 +20,23 @@
         <div class="cell small-4 ">
             <!-- Name Form -->
             <label> <i class="fas fa-signature"></i> Name
-                <input type="text" placeholder="Your Name">
+                <input name="name" id="name" type="text" placeholder="Your Name">
             </label>
             <!-- desired job -->
             <label> <i class="fas fa-briefcase"></i> Desired job
-                <input type="text" placeholder="Desired job">
+                <input id="job" type="text" placeholder="Desired job">
             </label>
             <div class="grid-x grid-margin-x">
                 <div class="cell small-6">
                     <!-- Email -->
                     <label> <i class="fas fa-at"></i> Email
-                        <input type="email" placeholder="Your Email">
+                        <input id="email" type="email" placeholder="Your Email">
                     </label>
                 </div>
                 <div class="cell small-6">
                     <!-- Phone -->
                     <label> <i class="fas fa-phone"></i> Phone
-                        <input type="tel" placeholder="Your Phone">
+                        <input id="phone" type="tel" placeholder="Your Phone">
                     </label>
                 </div>
             </div>
@@ -78,7 +78,7 @@
 
             <!-- Resume -->
             <label> <i class="fas fa-pencil-alt"></i> Resume
-                <textarea name="" placeholder="Your Resume..."></textarea>
+                <textarea name="resume" id="resume" placeholder="Your Resume..."></textarea>
             </label>
             <!-- end Resume -->
 
@@ -234,12 +234,12 @@
                 <div class="paper__sidebar">
                     <img class="thumbnail sidebar__img" src="https://avatars1.githubusercontent.com/u/16634831?s=460&v=4"
                          alt="profile.">
-                    <h1 class="paper__title sidebar__name">Sakhri Houssem Eddine</h1>
-                    <h2 class="paper__title sidebar__job">Full Stack Developer</h2>
+                    <h1 id="cv_name" class="paper__title sidebar__name">Sakhri Houssem Eddine</h1>
+                    <h2 id="cv_job" class="paper__title sidebar__job">Full Stack Developer</h2>
                     <hr>
                     <dl class="sidebar__info">
-                        <dd><i class="fas fa-at"></i> s.houssem.e@gmail.com</dd>
-                        <dd><i class="fas fa-phone"></i> 00213777850224</dd>
+                        <dd><i class="fas fa-at"></i> <span id="cv_email">s.houssem.e@gmail.com</span></dd>
+                        <dd><i class="fas fa-phone"></i> <span id="cv_phone">00213777850224</span></dd>
                         <dd><i class="fas fa-globe-europe"></i> SakhriHoussem.me</dd>
                         <dd><i class="fab fa-github"></i> SakhriHoussem</dd>
                         <dd><i class="fab fa-twitter"></i> @SakhriHoussem</dd>
@@ -285,8 +285,8 @@
                 <div class="paper__main">
 
                     <!-- Resume -->
-                    <div id="cv__resume">
-                        <h1 class="main__title"><i class="fas fa-pencil-alt"></i> Resume</h1>
+                    <h1 class="main__title"><i class="fas fa-pencil-alt"></i> Resume</h1>
+                    <div id="cv_resume">
 
                         <p>Versatile, motivated and passionate web developer of new technologies.</p>
                         <p>Having gained experience with multiple technologies and completing several development
