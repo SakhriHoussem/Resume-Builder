@@ -2,50 +2,52 @@
   background-color: #e6e6e6; }
 
 .paper {
-  display: table;
   width: 59.5rem;
   min-height: 84.2rem;
   margin: auto;
   background-color: #fff; }
-  .paper__sidebar {
+
+.cv {
+  display: table; }
+  .cv__sidebar {
     padding: 1rem;
     background-color: #1779ba;
     width: 30%;
     display: table-cell;
     color: #fff; }
-  .paper__main {
+  .cv__main {
     padding: 10px;
     width: 65%;
     display: table-cell; }
-    .paper__main h1 {
+    .cv__main h1 {
       color: #1779ba;
       font-size: 1.3rem; }
-    .paper__main h2 {
+    .cv__main h2 {
       position: relative;
       font-size: 1.1rem;
       margin-bottom: 0;
       margin-top: 10px; }
-      .paper__main h2 small {
+      .cv__main h2 small {
         color: #888d95;
         font-size: 1rem;
         position: absolute;
         right: 0;
         top: 0.9rem; }
-      .paper__main h2 + h3 {
+      .cv__main h2 + h3 {
         color: #888d95;
         font-size: 0.9rem; }
-    .paper__main p, .paper__main ul, .paper__main dd {
+    .cv__main p, .cv__main ul, .cv__main dd {
       color: #26282b;
       font-size: 0.8rem;
       margin-bottom: 0;
       padding-left: 10px;
       text-align: justify; }
-    .paper__main .tags {
+    .cv__main .tags {
       margin-left: 10px; }
-      .paper__main .tags span {
+      .cv__main .tags span {
         border-radius: 3px;
         font-size: 0.7rem; }
-  .paper__title {
+  .cv__title {
     font-size: 1.4rem !important; }
 
 .sidebar__title {
@@ -67,9 +69,14 @@
   margin-left: auto; }
 .sidebar__info dd {
   margin: 5px;
-  font-size: 0.8rem; }
+  font-size: 0.8rem;
+  clear: both; }
   .sidebar__info dd i {
     margin-right: 20px; }
+  .sidebar__info dd a {
+    color: #fff; }
+    .sidebar__info dd a:hover {
+      text-decoration: underline; }
 
 .main__title {
   margin-top: 1rem;

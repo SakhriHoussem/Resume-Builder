@@ -20,23 +20,23 @@
         <div class="cell small-4 ">
             <!-- Name Form -->
             <label> <i class="fas fa-signature"></i> Name
-                <input name="name" id="name" type="text" placeholder="Your Name">
+                <input name="name" id="input-name" type="text" placeholder="Your Name">
             </label>
             <!-- desired job -->
             <label> <i class="fas fa-briefcase"></i> Desired job
-                <input id="job" type="text" placeholder="Desired job">
+                <input name="job" id="input-job" type="text" placeholder="Desired job">
             </label>
             <div class="grid-x grid-margin-x">
                 <div class="cell small-6">
                     <!-- Email -->
                     <label> <i class="fas fa-at"></i> Email
-                        <input id="email" type="email" placeholder="Your Email">
+                        <input name="email" id="input-email" type="email" placeholder="Your Email">
                     </label>
                 </div>
                 <div class="cell small-6">
                     <!-- Phone -->
                     <label> <i class="fas fa-phone"></i> Phone
-                        <input id="phone" type="tel" placeholder="Your Phone">
+                        <input name="phone" id="input-phone" type="tel" placeholder="Your Phone">
                     </label>
                 </div>
             </div>
@@ -44,10 +44,10 @@
             <label> <i class="fas fa-link"></i> Links
                 <div class="grid-x ">
                     <div class="cell small-11">
-                        <input type="url" placeholder="Your Site/Blog Link">
+                        <input name="web-sites" id="input-web-sites" type="url" placeholder="Your Site/Blog Link">
                     </div>
                     <div class="cell small-1">
-                        <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                        <button id="button-web-sites_add" class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
                     </div>
                 </div>
             </label>
@@ -78,7 +78,7 @@
 
             <!-- Resume -->
             <label> <i class="fas fa-pencil-alt"></i> Resume
-                <textarea name="resume" id="resume" placeholder="Your Resume..."></textarea>
+                <textarea name="resume" id="input-resume" placeholder="Your Resume..."></textarea>
             </label>
             <!-- end Resume -->
 
@@ -229,18 +229,20 @@
 
         <!-- cv paper -->
         <div class="bg--light-gray cell small-8">
-            <div class="paper">
+            <div class="paper cv">
                 <!-- sidebar of cv -->
-                <div class="paper__sidebar">
+                <div class="cv__sidebar">
                     <img class="thumbnail sidebar__img" src="https://avatars1.githubusercontent.com/u/16634831?s=460&v=4"
                          alt="profile.">
-                    <h1 id="cv_name" class="paper__title sidebar__name">Sakhri Houssem Eddine</h1>
-                    <h2 id="cv_job" class="paper__title sidebar__job">Full Stack Developer</h2>
+                    <h1 id="cv__name" class="cv__title sidebar__name">Sakhri Houssem Eddine</h1>
+                    <h2 id="cv__job" class="cv__title sidebar__job">Full Stack Developer</h2>
                     <hr>
                     <dl class="sidebar__info">
-                        <dd><i class="fas fa-at"></i> <span id="cv_email">s.houssem.e@gmail.com</span></dd>
-                        <dd><i class="fas fa-phone"></i> <span id="cv_phone">00213777850224</span></dd>
-                        <dd><i class="fas fa-globe-europe"></i> SakhriHoussem.me</dd>
+                        <dd><i class="fas fa-at"></i> <span id="cv__email">s.houssem.e@gmail.com</span></dd>
+                        <dd><i class="fas fa-phone"></i> <span id="cv__phone">00213777850224</span></dd>
+                        <dd id="cv__web-sites">
+                            <i class="fas fa-globe-europe"></i> <a href="http://sakhrihoussem.me">sakhrihoussem.me</a>
+                        </dd>
                         <dd><i class="fab fa-github"></i> SakhriHoussem</dd>
                         <dd><i class="fab fa-twitter"></i> @SakhriHoussem</dd>
                         <dd><i class="fab fa-linkedin-in"></i> SakhriHoussem</dd>
@@ -282,11 +284,11 @@
                 </div>
 
                 <!-- main of cv -->
-                <div class="paper__main">
+                <div class="cv__main">
 
                     <!-- Resume -->
                     <h1 class="main__title"><i class="fas fa-pencil-alt"></i> Resume</h1>
-                    <div id="cv_resume">
+                    <div id="cv__resume">
 
                         <p>Versatile, motivated and passionate web developer of new technologies.</p>
                         <p>Having gained experience with multiple technologies and completing several development

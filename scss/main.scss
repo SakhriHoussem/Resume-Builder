@@ -49,11 +49,14 @@ $paper-title-margin-top: 1rem;
 // ----------------------------------------------------
 
 .paper {
-  display: table;
   width: $paper-width;
   min-height: $paper-height;
   margin: auto;
   background-color: $paper-bg-color;
+}
+
+.cv {
+  display: table;
 
   &__sidebar {
     padding: $sidebar-padding;
@@ -67,15 +70,18 @@ $paper-title-margin-top: 1rem;
     padding: $default-padding;
     width: 65%;
     display: table-cell;
+
     h1 {
       color: $paper-title-color;
       font-size: $title-1-size;
     }
+
     h2 {
       position: relative;
       font-size: $title-2-size;
       margin-bottom: 0;
       margin-top: $default-margin *2;
+
       small {
         color: $time-color;
         font-size: ($text-size + .2rem);
@@ -83,6 +89,7 @@ $paper-title-margin-top: 1rem;
         right: 0;
         top: 0.9rem;
       }
+
       + h3 {
         color: $time-color;
         font-size: $time-size;
@@ -96,8 +103,10 @@ $paper-title-margin-top: 1rem;
       padding-left: 10px;
       text-align: justify;
     }
+
     .tags {
       margin-left: $default-margin * 2;
+
       span {
         border-radius: 3px;
         font-size: $text-size - .1rem;
@@ -121,6 +130,7 @@ $paper-title-margin-top: 1rem;
     text-align: center;
     font-weight: 600;
   }
+
   &__job {
     color: $bg-color;
     text-align: center;
@@ -139,8 +149,18 @@ $paper-title-margin-top: 1rem;
     dd {
       margin: 5px;
       font-size: $text-size;
+      clear: both;
+
       i {
         margin-right: $default-padding * 2;
+      }
+
+      a {
+        color: $paper-bg-color;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
