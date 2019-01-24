@@ -214,27 +214,32 @@
                                 <option value="100">Expert</option>
                             </select>
                         </div>
+                        <button id="button-skill_add" class="button expanded" type="button">
+                            <i class="fas fa-plus-square"></i>
+                        </button>
                     </div>
-                    <button id="button-skill_add" class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
                 </div>
 
                 <!-- languages -->
                 <div class="tabs-panel" id="languages">
                     <div class="grid-x">
                         <div class="cell small-8">
-                            <input type="text" placeholder="Your language">
+                            <input id="input-language" type="text" placeholder="Your language">
                         </div>
                         <div class="cell small-4">
-                            <label for="lang_Level"></label>
-                            <select name="lang_Level" id="lang_Level" required>
+                            <label for="select-language_level"></label>
+                            <select name="language_level" id="select-language_level" required>
                                 <option disabled selected>Level</option>
-                                <option value="50">Beginner</option>
-                                <option value="75">Intermediate</option>
-                                <option value="100">Expert</option>
+                                <option value="Beginner">Beginner</option>
+                                <option value="Conversational">Conversational</option>
+                                <option value="Business">Business </option>
+                                <option value="Fluent">Fluent  </option>
                             </select>
                         </div>
                     </div>
-                    <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                    <button id="button-language_add" class="button expanded" type="button">
+                        <i class="fas fa-plus-square"></i>
+                    </button>
                 </div>
 
                 <!-- Interests -->
@@ -268,7 +273,7 @@
                         </dd>
 
                         <!-- skills -->
-                        <dt class="sidebar__title clearfix"> <i class="fas fa-wrench"></i> Skills</dt>
+                        <dt class="sidebar__title clearfix"><i class="fas fa-wrench"></i> Skills</dt>
                         <dd id="cv__skills">
                             <div>
                                 <span>CSS & SASS</span>
@@ -298,9 +303,11 @@
 
                         <!-- languages -->
                         <dt class="sidebar__title"><i class="fas fa-language"></i> Languages</dt>
-                        <dd> Arabic</dd>
-                        <dd> French</dd>
-                        <dd> English</dd>
+                        <dd id="cv__languages">
+                            <div>English</div>
+                            <div>French</div>
+                            <div>Arabic</div>
+                        </dd>
 
                         <!-- interests -->
                         <dt class="sidebar__title"><i class="fas fa-plus"></i> Interests</dt>

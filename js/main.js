@@ -77,7 +77,7 @@ function addSocialMedia(inputID) {
     });
 }
 
-function addSkill(inputID
+function addSkill(inputID) {
     // get elements
     let input = document.getElementById("input-" + inputID);
     let select = document.getElementById("select-" + inputID + "_level");
@@ -88,11 +88,11 @@ function addSkill(inputID
         let divTag = document.createElement("div");
 
         // create <progress class="secondary float-right" max="100" value="85"></progress>
-        let progress = document.createElement("progress");
-        progress.classList.add("secondary");
-        progress.classList.add("float-right");
-        progress.max = 100;
-        progress.value = select.value;
+        let progressTag = document.createElement("progress");
+        progressTag.classList.add("secondary");
+        progressTag.classList.add("float-right");
+        progressTag.max = 100;
+        progressTag.value = select.value;
 
         // create <span> ... </span>
         let spanTag = document.createElement("span");
@@ -101,8 +101,31 @@ function addSkill(inputID
         // get the element to write inside
         let to = document.getElementById('cv__' + inputID + "s");
         divTag.appendChild(spanTag);
-        divTag.appendChild(progress);
+        divTag.appendChild(progressTag);
         to.appendChild(divTag);
+    });
+}
+
+function addLanguage(inputID) {
+    // get elements
+    let input = document.getElementById("input-" + inputID);
+    let select = document.getElementById("select-" + inputID + "_level");
+    let button = document.getElementById("button-" + inputID + "_add");
+
+    button.addEventListener("click", ($event) => {
+        $event.preventDefault();
+        // create <small> Level </small>
+        let smallTag = document.createElement("small");
+        smallTag.textContent = " ( " + select.value + " ) ";
+
+        // create <div> ... </span>
+        let spanTag = document.createElement("div");
+        spanTag.textContent = input.value;
+
+        // get the element to write inside
+        let to = document.getElementById('cv__' + inputID + "s");
+        spanTag.appendChild(smallTag);
+        to.appendChild(spanTag);
     });
 }
 
@@ -115,6 +138,7 @@ addInfo("resume");
 addWebSite("web-sites");
 addSocialMedia("social-media");
 addSkill("skill");
+addLanguage("language");
 
 
 
