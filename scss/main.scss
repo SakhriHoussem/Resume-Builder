@@ -189,3 +189,13 @@ $paper-title-margin-top: 1rem;
 label {
   font-weight: 600;
 }
+
+// ----------------------------------------------------
+// Tags
+// ----------------------------------------------------
+
+.tags {
+    .label {
+      margin-right: $default-margin;
+    }
+}

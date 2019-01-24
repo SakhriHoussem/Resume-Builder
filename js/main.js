@@ -153,6 +153,7 @@ function addExperience(blockID) {
     let fromInput = document.getElementById(blockID + "_from");
     let toInput = document.getElementById(blockID + "_to");
     let descriptionInput = document.getElementById(blockID + "_description");
+    let tagsInput = document.getElementById(blockID + "_tags");
     let button = document.getElementById("button-" + blockID + "_add");
 
     button.addEventListener("click", ($event) => {
@@ -171,11 +172,24 @@ function addExperience(blockID) {
         let pTags = document.createElement("p");
         pTags.textContent = descriptionInput.value;
 
+        // create <div class="tags"> ... </div>
+        let tagsBlock = document.createElement("div");
+        tagsBlock.classList.add("tags");
+        let tags  = tagsInput.value.split(",");
+        for (let i=0; i<tags.length; i++) {
+            // <span class="label">tag[i]</span>
+            let spanTag = document.createElement("span");
+            spanTag.classList.add("label");
+            spanTag.textContent = tags[i];
+            tagsBlock.appendChild(spanTag);
+        }
+
         // create <div class="cv__..." > ... </div>
         let divTag = document.createElement("div");
         divTag.classList.add("cv__" + blockID);
         divTag.appendChild(h2Tag);
         divTag.appendChild(pTags);
+        divTag.appendChild(tagsBlock);
 
         // get the element to write inside
         let to = document.getElementById('cv__' + blockID + "s");
@@ -190,6 +204,7 @@ function addProject(blockID) {
     let fromInput = document.getElementById(blockID + "_from");
     let toInput = document.getElementById(blockID + "_to");
     let descriptionInput = document.getElementById(blockID + "_description");
+    let tagsInput = document.getElementById(blockID + "_tags");
     let button = document.getElementById("button-" + blockID + "_add");
 
     button.addEventListener("click", ($event) => {
@@ -212,12 +227,25 @@ function addProject(blockID) {
         let pTags = document.createElement("p");
         pTags.textContent = descriptionInput.value;
 
+        // create <div class="tags"> ... </div>
+        let tagsBlock = document.createElement("div");
+        tagsBlock.classList.add("tags");
+        let tags  = tagsInput.value.split(",");
+        for (let i=0; i<tags.length; i++) {
+            // <span class="label">tag[i]</span>
+            let spanTag = document.createElement("span");
+            spanTag.classList.add("label");
+            spanTag.textContent = tags[i];
+            tagsBlock.appendChild(spanTag);
+        }
+
         // create <div class="cv__..." > ... </div>
         let divTag = document.createElement("div");
         divTag.classList.add("cv__" + blockID);
         divTag.appendChild(h2Tag);
         divTag.appendChild(h3Tag);
         divTag.appendChild(pTags);
+        divTag.appendChild(tagsBlock);
 
         // get the element to write inside
         let to = document.getElementById('cv__' + blockID + "s");
