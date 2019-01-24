@@ -119,13 +119,31 @@ function addLanguage(inputID) {
         smallTag.textContent = " ( " + select.value + " ) ";
 
         // create <div> ... </span>
-        let spanTag = document.createElement("div");
-        spanTag.textContent = input.value;
+        let divTag = document.createElement("div");
+        divTag.textContent = input.value;
 
         // get the element to write inside
         let to = document.getElementById('cv__' + inputID + "s");
-        spanTag.appendChild(smallTag);
-        to.appendChild(spanTag);
+        divTag.appendChild(smallTag);
+        to.appendChild(divTag);
+    });
+}
+
+function addInterest(inputID) {
+    // get elements
+    let input = document.getElementById("input-" + inputID);
+    let button = document.getElementById("button-" + inputID + "_add");
+
+    button.addEventListener("click", ($event) => {
+        $event.preventDefault();
+
+        // create <div> ... </span>
+        let divTag = document.createElement("div");
+        divTag.textContent = input.value;
+
+        // get the element to write inside
+        let to = document.getElementById('cv__' + inputID + "s");
+        to.appendChild(divTag);
     });
 }
 
@@ -139,6 +157,7 @@ addWebSite("web-sites");
 addSocialMedia("social-media");
 addSkill("skill");
 addLanguage("language");
+addInterest("interest");
 
 
 
