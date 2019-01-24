@@ -203,19 +203,19 @@
                 <div class="tabs-panel" id="skills">
                     <div class="grid-x">
                         <div class="cell small-8">
-                            <input type="text" placeholder="Your Skill">
+                            <input id="input-skill" type="text" placeholder="Your Skill">
                         </div>
                         <div class="cell small-4">
-                            <label for="skill_level"></label>
-                            <select name="skill_level" id="skill_level" required>
+                            <label for="select-skill_level"></label>
+                            <select name="skill_level" id="select-skill_level" required>
                                 <option disabled selected>Level</option>
-                                <option value="1">Debutant</option>
-                                <option value="2">Pro</option>
-                                <option value="3">Expert</option>
+                                <option value="50">Beginner</option>
+                                <option value="75">Intermediate</option>
+                                <option value="100">Expert</option>
                             </select>
                         </div>
                     </div>
-                    <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                    <button id="button-skill_add" class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
                 </div>
 
                 <!-- languages -->
@@ -228,9 +228,9 @@
                             <label for="lang_Level"></label>
                             <select name="lang_Level" id="lang_Level" required>
                                 <option disabled selected>Level</option>
-                                <option value="1">Beginner</option>
-                                <option value="2">Intermediate</option>
-                                <option value="3">Expert</option>
+                                <option value="50">Beginner</option>
+                                <option value="75">Intermediate</option>
+                                <option value="100">Expert</option>
                             </select>
                         </div>
                     </div>
@@ -239,7 +239,7 @@
 
                 <!-- Interests -->
                 <div class="tabs-panel" id="interests">
-                            <input type="text" placeholder="Your interest">
+                    <input type="text" placeholder="Your interest">
                     <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
                 </div>
             </div>
@@ -269,23 +269,31 @@
 
                         <!-- skills -->
                         <dt class="sidebar__title clearfix"> <i class="fas fa-wrench"></i> Skills</dt>
-                        <dd> CSS & SASS
-                            <progress class="secondary float-right" max="100" value="90"></progress>
-                        </dd>
-                        <dd> Bootstrap
-                            <progress class="secondary float-right" max="100" value="85"></progress>
-                        </dd>
-                        <dd> Foundation
-                            <progress class="secondary float-right" max="100" value="85"></progress>
-                        </dd>
-                        <dd> PHP
-                            <progress class="secondary float-right" max="100" value="80"></progress>
-                        </dd>
-                        <dd> Symfony
-                            <progress class="secondary float-right" max="100" value="80"></progress>
-                        </dd>
-                        <dd> Python
-                            <progress class="secondary float-right" max="100" value="80"></progress>
+                        <dd id="cv__skills">
+                            <div>
+                                <span>CSS & SASS</span>
+                                <progress class="secondary float-right" max="100" value="90"></progress>
+                            </div>
+                            <div>
+                                <span>Bootstrap</span>
+                                <progress class="secondary float-right" max="100" value="85"></progress>
+                            </div>
+                            <div>
+                                <span>Foundation</span>
+                                <progress class="secondary float-right" max="100" value="85"></progress>
+                            </div>
+                            <div>
+                                <span>PHP</span>
+                                <progress class="secondary float-right" max="100" value="80"></progress>
+                            </div>
+                            <div>
+                                <span>Symfony</span>
+                                <progress class="secondary float-right" max="100" value="80"></progress>
+                            </div>
+                            <div>
+                                <span>Python</span>
+                                <progress class="secondary float-right" max="100" value="80"></progress>
+                            </div>
                         </dd>
 
                         <!-- languages -->
