@@ -3,22 +3,23 @@ $(document).foundation();
 // get elements ------------------------------
 
 // functions ----------------------------------
-function addInfo(inputName) {
-    let input = document.getElementById("input-" + inputName);
-    input.addEventListener("keypress", ($event) => {
-        let to = document.getElementById('cv__' + inputName);
-        to.textContent = $event.target.value;
+function addInfo(inputID) {
+    let input = document.getElementById("input-" + inputID);
+    input.addEventListener("keypress", () => {
+        let to = document.getElementById('cv__' + inputID);
+        to.textContent = input.value;
     });
 
-    input.addEventListener("blur", ($event) => {
-        let to = document.getElementById('cv__' + inputName);
-        to.textContent = $event.target.value;
+    input.addEventListener("blur", () => {
+        let to = document.getElementById('cv__' + inputID);
+        to.textContent = input.value;
     });
 }
-function addWebSite(inputName) {
+
+function addWebSite(inputID) {
     // get elements
-    let input = document.getElementById("input-" + inputName);
-    let button = document.getElementById("button-" + inputName + "_add");
+    let input = document.getElementById("input-" + inputID);
+    let button = document.getElementById("button-" + inputID + "_add");
 
     button.addEventListener("click", ($event) => {
         $event.preventDefault();
@@ -26,7 +27,8 @@ function addWebSite(inputName) {
 
         // create <i class="fas fa-globe-europe"></i>
         let iTag = document.createElement("i");
-        iTag.classList = "fas fa-globe-europe";
+        iTag.classList.add("fas");
+        iTag.classList.add("fa-globe-europe");
 
         // create link tag
         let linkTag = document.createElement("a");

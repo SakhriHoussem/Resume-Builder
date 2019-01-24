@@ -57,20 +57,38 @@
             <label> <i class="fas fa-network-wired"></i> Social Media
                 <div class="grid-x">
                     <div class="cell small-4">
-                        <select id="Social-Media" name="Social-Media" class="fab">
+                        <select id="select-social-media" name="social-media" class="fab">
                             <option value="" selected disabled>Select</option>
-                            <option class="icon twitter" value="linkedin">&#xf0e1; LinkedIn</option>
-                            <option value="github">&#xf09b; GitHub</option>
-                            <option value="facebook">&#xf09a; Facebook</option>
-                            <option  value="twitter">&#xf099; Twitter</option>
-                            <option value="gitlab">&#xf296; GitLab</option>
+                            <option value="&#xf0e1;">&#xf0e1; LinkedIn</option>
+                            <option value="&#xf09b;">&#xf09b; GitHub</option>
+                            <option value="&#xf09a;">&#xf09a; Facebook</option>
+                            <option value="&#xf099;">&#xf099; Twitter</option>
+                            <option value="&#xf296;">&#xf296; GitLab</option>
+                            <option value="&#xf171;">&#xf171; BitBucket</option>
+                            <option value="&#xf1b4;">&#xf1b4; Behance</option>
+                            <option value="&#xf37c;">&#xf37c; blogger</option>
+                            <option value="&#xf17d;">&#xf17d; Dribbble</option>
+                            <option value="&#xf167;">&#xf167; Youtube</option>
+                            <option value="&#xf0d5;">&#xf0d5; Google+</option>
+                            <option value="&#xf16d;">&#xf16d; Instagram</option>
+                            <option value="&#xf3c7;">&#xf3c7; Medium</option>
+                            <option value="&#xf231;">&#xf231; Pinterest</option>
+                            <option value="&#xf1d6;">&#xf1d6; QQ</option>
+                            <option value="&#xf2c4;">&#xf2c4; Quora</option>
+                            <option value="&#xf17e;">&#xf17e; Skype</option>
+                            <option value="&#xf198;">&#xf198; Slack</option>
+                            <option value="&#xf16c;">&#xf16c; StackOverflow</option>
+                            <option value="&#xf3fe;">&#xf3fe; Telegram</option>
+                            <option value="&#xf173;">&#xf173; Tumblr</option>
+                            <option value="&#xf1e8;">&#xf1e8; Twitch</option>
+                            <option value="&#xf40a;">&#xf40a; Vimeo</option>
                         </select>
                     </div>
                     <div class="cell small-7">
-                        <input type="url" placeholder="Your Profile Link">
+                        <input id="input-social-media" type="url" placeholder="Your Profile Link">
                     </div>
                     <div class="cell small-1">
-                        <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                        <button id="button-social-media_add" class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
                     </div>
                 </div>
             </label>
@@ -210,8 +228,8 @@
                             <label for="lang_Level"></label>
                             <select name="lang_Level" id="lang_Level" required>
                                 <option disabled selected>Level</option>
-                                <option value="1">Debutant</option>
-                                <option value="2">Pro</option>
+                                <option value="1">Beginner</option>
+                                <option value="2">Intermediate</option>
                                 <option value="3">Expert</option>
                             </select>
                         </div>
@@ -243,9 +261,11 @@
                         <dd id="cv__web-sites">
                             <i class="fas fa-globe-europe"></i> <a href="http://sakhrihoussem.me">sakhrihoussem.me</a>
                         </dd>
-                        <dd><i class="fab fa-github"></i> SakhriHoussem</dd>
-                        <dd><i class="fab fa-twitter"></i> @SakhriHoussem</dd>
-                        <dd><i class="fab fa-linkedin-in"></i> SakhriHoussem</dd>
+                        <dd id="cv__social-media">
+                            <div><i class="fab fa-github"></i> SakhriHoussem</div>
+                            <div><i class="fab fa-twitter"></i> @SakhriHoussem</div>
+                            <div><i class="fab fa-linkedin-in"></i> SakhriHoussem</div>
+                        </dd>
 
                         <!-- skills -->
                         <dt class="sidebar__title clearfix"> <i class="fas fa-wrench"></i> Skills</dt>
