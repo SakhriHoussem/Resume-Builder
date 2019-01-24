@@ -1,10 +1,10 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("jquery"));
+		module.exports = factory(require("js/vendor/jquery/jquery"));
 	else if(typeof define === 'function' && define.amd)
-		define(["jquery"], factory);
+		define(["js/vendor/jquery/jquery"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("jquery")) : factory(root["jQuery"]);
+		var a = typeof exports === 'object' ? factory(require("js/vendor/jquery/jquery")) : factory(root["jQuery"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
 })(window, function(__WEBPACK_EXTERNAL_MODULE_jquery__) {

@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Cv Generator</title>
     <!-- foundation styles -->
-    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/vendor/foundation/foundation.min.css">
+    <!-- parsley styles -->
+    <link rel="stylesheet" href="css/vendor/parsley/parsley.css">
     <!-- fontawesome styles -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -18,10 +20,11 @@
 <div class="bg-gray grid-container fluid">
     <div class="grid-x grid-padding-x">
         <div class="cell small-4 ">
-            <!-- Name Form -->
-            <label> <i class="fas fa-signature"></i> Name
-                <input name="name" id="input-name" type="text" placeholder="Your Name">
-            </label>
+            <form action="#">
+                <!-- Name Form -->
+                <label> <i class="fas fa-signature"></i> Name required
+                    <input name="name" id="input-name" type="text" placeholder="Your Name" required>
+                </label>
             <!-- desired job -->
             <label> <i class="fas fa-briefcase"></i> Desired job
                 <input name="job" id="input-job" type="text" placeholder="Desired job">
@@ -30,13 +33,13 @@
                 <div class="cell small-6">
                     <!-- Email -->
                     <label> <i class="fas fa-at"></i> Email
-                        <input name="email" id="input-email" type="email" placeholder="Your Email">
+                        <input name="email" id="input-email" type="email" placeholder="Your Email" required>
                     </label>
                 </div>
                 <div class="cell small-6">
                     <!-- Phone -->
                     <label> <i class="fas fa-phone"></i> Phone
-                        <input name="phone" id="input-phone" type="tel" placeholder="Your Phone">
+                        <input name="phone" id="input-phone" type="tel" placeholder="Your Phone" required>
                     </label>
                 </div>
             </div>
@@ -98,6 +101,8 @@
             <label> <i class="fas fa-pencil-alt"></i> Resume
                 <textarea name="resume" id="input-resume" placeholder="Your Resume..."></textarea>
             </label>
+            </form>
+
             <!-- end Resume -->
 
             <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
@@ -424,9 +429,10 @@
     </div>
 </div>
 
-<script src="js/vendor/jquery.js"></script>
-<script src="js/vendor/what-input.js"></script>
-<script src="js/vendor/foundation.js"></script>
+<script src="js/vendor/jquery/jquery.js"></script>
+<script src="js/vendor/foundation/what-input.js"></script>
+<script src="js/vendor/foundation/foundation.min.js"></script>
+<script src="js/vendor/parsley/parsley.min.js"></script>
 <!-- main app scripts -->
 <script src="js/main.js"></script>
 </body>
