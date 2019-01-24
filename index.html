@@ -101,7 +101,7 @@
             <!-- end Resume -->
 
             <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
-                <li class="tabs-title is-active"><a href="#experiences" aria-selected="true"><i class="fas fa-briefcase"></i> Experiences</a></li>
+                <li class="tabs-title is-active"><a href="#experience" aria-selected="true"><i class="fas fa-briefcase"></i> Experiences</a></li>
                 <li class="tabs-title"><a href="#projects"><i class="fas fa-box-open"></i> Projects</a></li>
                 <li class="tabs-title"><a href="#educations"><i class="fas fa-university"></i> Educations</a></li>
                 <li class="tabs-title"><a href="#skills"><i class="fas fa-wrench"></i> Skills</a></li>
@@ -111,64 +111,64 @@
             <div class="tabs-content" data-tabs-content="collapsing-tabs">
 
                 <!-- experiences -->
-                <div class="tabs-panel is-active" id="experiences">
+                <div class="tabs-panel is-active" id="experience">
                     <!-- Role -->
                     <label> <i class="far fa-user"></i> Role
-                        <input type="text" placeholder="Your Role">
+                        <input id="experience_role" type="text" placeholder="Your Role">
                     </label>
                     <label> <i class="far fa-building"></i> Company
-                        <input type="text" placeholder="Your Company">
+                        <input  id="experience_company" type="text" placeholder="Your Company">
                     </label>
                     <div class="grid-x">
                         <div class="cell small-6">
                             <!-- From -->
                             <label> <i class="far fa-calendar-alt"></i> From
-                                <input type="month" placeholder="From">
+                                <input id="experience_from" type="month" placeholder="From">
                             </label>
                         </div>
                         <div class="cell small-6">
                             <!-- To -->
                             <label> <i class="far fa-calendar-alt"></i> To
-                                <input type="month" placeholder="To">
+                                <input id="experience_to" type="month" placeholder="To">
                             </label>
                         </div>
                     </div>
                     <!-- Experience Description -->
                     <label> <i class="fas fa-pencil-alt"></i> Description
-                        <textarea name="" placeholder="Describe Your Experience"></textarea>
+                        <textarea id="experience_description" name="" placeholder="Describe Your Experience"></textarea>
                     </label>
-                    <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                    <button id="button-experience_add" class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
                 </div>
 
                 <!-- projects -->
                 <div class="tabs-panel" id="projects">
                     <!-- Role -->
                     <label> <i class="fas fa-signature"></i> Name
-                        <input type="text" placeholder="Your Project Name">
+                        <input id="project_name" type="text" placeholder="Your Project Name">
                     </label>
 
                     <label> <i class="fas fa-link"></i> Link
-                        <input type="url" placeholder="Your Project Link">
+                        <input id="project_link" type="url" placeholder="Your Project Link">
                     </label>
                     <div class="grid-x">
                         <div class="cell small-6">
                             <!-- From -->
                             <label> <i class="far fa-calendar-alt"></i> From
-                                <input type="month" placeholder="From">
+                                <input id="project_from" type="month" placeholder="From">
                             </label>
                         </div>
                         <div class="cell small-6">
                             <!-- To -->
                             <label> <i class="far fa-calendar-alt"></i> To
-                                <input type="month" placeholder="To">
+                                <input id="project_to" type="month" placeholder="To">
                             </label>
                         </div>
                     </div>
                     <!-- Projects Description -->
                     <label> <i class="fas fa-pencil-alt"></i> Description
-                        <textarea name="" placeholder="Describe Your Project"></textarea>
+                        <textarea name="" id="project_description" placeholder="Describe Your Project"></textarea>
                     </label>
-                    <button class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                    <button id="button-project_add" class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
                 </div>
                 <!-- educations -->
                 <div class="tabs-panel" id="educations">

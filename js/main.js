@@ -118,7 +118,7 @@ function addLanguage(inputID) {
         let smallTag = document.createElement("small");
         smallTag.textContent = " ( " + select.value + " ) ";
 
-        // create <div> ... </span>
+        // create <div> ... </div>
         let divTag = document.createElement("div");
         divTag.textContent = input.value;
 
@@ -137,12 +137,90 @@ function addInterest(inputID) {
     button.addEventListener("click", ($event) => {
         $event.preventDefault();
 
-        // create <div> ... </span>
+        // create <div> ... </div>
         let divTag = document.createElement("div");
         divTag.textContent = input.value;
 
         // get the element to write inside
         let to = document.getElementById('cv__' + inputID + "s");
+        to.appendChild(divTag);
+    });
+}
+
+function addExperience(blockID) {
+    // get elements
+    let roleInput = document.getElementById(blockID + "_role");
+    let fromInput = document.getElementById(blockID + "_from");
+    let toInput = document.getElementById(blockID + "_to");
+    let descriptionInput = document.getElementById(blockID + "_description");
+    let button = document.getElementById("button-" + blockID + "_add");
+
+    button.addEventListener("click", ($event) => {
+        $event.preventDefault();
+
+        // create <h2> ... </h2>
+        let h2Tag = document.createElement("h2");
+        h2Tag.textContent = roleInput.value;
+
+        // create <small> ... </small>
+        let smallTag = document.createElement("small");
+        smallTag.textContent = fromInput.value + " - "  + toInput.value;
+        h2Tag.appendChild(smallTag); // <h2> ... <small> ... </small> </h2>
+
+        // create <p> ... </p>
+        let pTags = document.createElement("p");
+        pTags.textContent = descriptionInput.value;
+
+        // create <div class="cv__experience" > ... </div>
+        let divTag = document.createElement("div");
+        divTag.classList.add("cv__experience");
+        divTag.appendChild(h2Tag);
+        divTag.appendChild(pTags);
+
+        // get the element to write inside
+        let to = document.getElementById('cv__' + blockID + "s");
+        to.appendChild(divTag);
+    });
+}
+
+function addProject(blockID) {
+    // get elements
+    let nameInput = document.getElementById(blockID + "_name");
+    let linkInput = document.getElementById(blockID + "_link");
+    let fromInput = document.getElementById(blockID + "_from");
+    let toInput = document.getElementById(blockID + "_to");
+    let descriptionInput = document.getElementById(blockID + "_description");
+    let button = document.getElementById("button-" + blockID + "_add");
+
+    button.addEventListener("click", ($event) => {
+        $event.preventDefault();
+
+        // create <h2> ... </h2>
+        let h2Tag = document.createElement("h2");
+        h2Tag.textContent = nameInput.value;
+
+        // create <small> ... </small>
+        let smallTag = document.createElement("small");
+        smallTag.textContent = fromInput.value + " - "  + toInput.value;
+        h2Tag.appendChild(smallTag); // <h2> ... <small> ... </small> </h2>
+
+        // create <h3> ... </h3>
+        let h3Tag = document.createElement("h3");
+        h3Tag.textContent = linkInput.value;
+
+        // create <p> ... </p>
+        let pTags = document.createElement("p");
+        pTags.textContent = descriptionInput.value;
+
+        // create <div class="cv__experience" > ... </div>
+        let divTag = document.createElement("div");
+        divTag.classList.add("cv__experience");
+        divTag.appendChild(h2Tag);
+        divTag.appendChild(h3Tag);
+        divTag.appendChild(pTags);
+
+        // get the element to write inside
+        let to = document.getElementById('cv__' + blockID + "s");
         to.appendChild(divTag);
     });
 }
@@ -158,6 +236,8 @@ addSocialMedia("social-media");
 addSkill("skill");
 addLanguage("language");
 addInterest("interest");
+addExperience("experience");
+addProject("project");
 
 
 
