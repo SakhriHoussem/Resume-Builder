@@ -1,18 +1,14 @@
 $(document).foundation();
+$("form").parsley();
 
 // get elements ------------------------------
 
 // functions ----------------------------------
 function addInfo(inputID) {
-    let input = document.getElementById("input-" + inputID);
-    input.addEventListener("keypress", () => {
+    $('#input-' + inputID).parsley().on('field:success', function() {
+        // In here, `this` is the parlsey instance of #some-input
         let to = document.getElementById('cv__' + inputID);
-        to.textContent = input.value;
-    });
-
-    input.addEventListener("blur", () => {
-        let to = document.getElementById('cv__' + inputID);
-        to.textContent = input.value;
+        to.textContent = this.value;
     });
 }
 
@@ -22,27 +18,29 @@ function addWebSite(inputID) {
     let button = document.getElementById("button-" + inputID + "_add");
 
     button.addEventListener("click", ($event) => {
-        $event.preventDefault();
-        let divTag = document.createElement("div");
+        if ($('#input-' + inputID).parsley().isValid() && input.value !== "" ) {
 
-        // create <i class="fas fa-globe-europe"></i>
-        let iTag = document.createElement("i");
-        iTag.classList.add("fas");
-        iTag.classList.add("fa-globe-europe");
+            let divTag = document.createElement("div");
 
-        // create link tag
-        let linkTag = document.createElement("a");
-        let linkText = document.createTextNode(input.value);
+            // create <i class="fas fa-globe-europe"></i>
+            let iTag = document.createElement("i");
+            iTag.classList.add("fas");
+            iTag.classList.add("fa-globe-europe");
 
-        linkTag.appendChild(linkText);
-        linkTag.title = input.value;
-        linkTag.href = input.value;
+            // create link tag
+            // get the element to write inside
 
-        // get the element to write inside
-        let to = document.getElementById('cv__' + inputID);
-        divTag.appendChild(iTag);
-        divTag.appendChild(linkTag);
-        to.appendChild(divTag);
+            let linkTag = document.createElement("a");
+            let linkText = document.createTextNode(input.value);
+
+            linkTag.appendChild(linkText);
+            linkTag.title = input.value;
+            linkTag.href = input.value;
+            let to = document.getElementById('cv__' + inputID);
+            divTag.appendChild(iTag);
+            divTag.appendChild(linkTag);
+            to.appendChild(divTag);
+        }
     });
 }
 
@@ -53,8 +51,9 @@ function addSocialMedia(inputID) {
     let button = document.getElementById("button-" + inputID + "_add");
 
     button.addEventListener("click", ($event) => {
-        $event.preventDefault();
-        let divTag = document.createElement("div");
+        if ($('#input-' + inputID).parsley().isValid() && $('#select-' + inputID).parsley().isValid() && input.value !== ""  ) {
+
+            let divTag = document.createElement("div");
 
         // create <i class="fas"> &#x....; </i>
         let iTag = document.createElement("i");
@@ -74,6 +73,7 @@ function addSocialMedia(inputID) {
         divTag.appendChild(iTag);
         divTag.appendChild(linkTag);
         to.appendChild(divTag);
+    }
     });
 }
 
@@ -295,6 +295,17 @@ function addEducation(blockID) {
     });
 }
 
+function displayTheRequire(cssClassName) {
+    let inputs = document.querySelectorAll("input[required]");
+    for (let i=0 ; i<inputs.length; i++) {
+        let name = document.querySelector('label[for=' + inputs[i].getAttribute("name") + ']');
+        let spanTag = document.createElement("span");
+        spanTag.textContent = "*";
+        spanTag.classList.add(cssClassName);
+        name.appendChild(spanTag);
+    }
+}
+
 // events ----------------------------------
 addInfo("name");
 addInfo("job");
@@ -309,6 +320,7 @@ addInterest("interest");
 addExperience("experience");
 addProject("project");
 addEducation("education");
+displayTheRequire("text-danger");
 
 
 

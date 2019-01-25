@@ -21,6 +21,7 @@ $paper-bg-color: #fff;
 $paper-title-color: $sidebar-bg-color;
 $text-color: #26282b;
 $time-color: lighten($text-color, 40);
+$danger-color: #cc4b37;;
 
 // ----------------------------------------------------
 // Padding
@@ -195,7 +196,15 @@ label {
 // ----------------------------------------------------
 
 .tags {
-    .label {
-      margin-right: $default-margin;
-    }
+  .label {
+    margin-right: $default-margin;
+  }
+}
+
+// ----------------------------------------------------
+// Text
+// ----------------------------------------------------
+
+.text-danger {
+  color: $danger-color;
 }

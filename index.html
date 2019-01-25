@@ -20,87 +20,91 @@
 <div class="bg-gray grid-container fluid">
     <div class="grid-x grid-padding-x">
         <div class="cell small-4 ">
-            <form action="#">
+            <form id="form" action="#" data-parsley-trigger="focusin focusout keypress">
                 <!-- Name Form -->
-                <label> <i class="fas fa-signature"></i> Name required
-                    <input name="name" id="input-name" type="text" placeholder="Your Name" required>
-                </label>
-            <!-- desired job -->
-            <label> <i class="fas fa-briefcase"></i> Desired job
-                <input name="job" id="input-job" type="text" placeholder="Desired job">
-            </label>
-            <div class="grid-x grid-margin-x">
-                <div class="cell small-6">
-                    <!-- Email -->
-                    <label> <i class="fas fa-at"></i> Email
-                        <input name="email" id="input-email" type="email" placeholder="Your Email" required>
-                    </label>
+                <label for="input-name"> <i class="fas fa-signature"></i> Full Name </label>
+                <input name="input-name" id="input-name" type="text" placeholder="Your Full Name" pattern="[a-zA-Z ]{3,30}" data-parsley-minwords="2" minlength="3" required>
+
+                <!-- desired job -->
+                <label for="input-job"> <i class="fas fa-briefcase"></i> Desired job </label>
+                <input name="input-job" id="input-job" type="text" placeholder="Your Desired job" minlength="3">
+
+                <!-- information block -->
+                <div class="grid-x grid-margin-x">
+                    <div class="cell small-6">
+                        <!-- Email -->
+                        <label for="input-email"> <i class="fas fa-at"></i> Email </label>
+                        <input name="input-email" data-parsley-type="email" id="input-email" type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="cell small-6">
+                        <!-- Phone -->
+                        <label for="input-phone"> <i class="fas fa-phone"></i> Phone </label>
+                        <input name="input-phone" id="input-phone" type="tel" data-parsley-length="[9, 14]" pattern="^[+]{0,1}[0-9]{1,4}[0-9]*" placeholder="Your Phone Number" required>
+                    </div>
                 </div>
-                <div class="cell small-6">
-                    <!-- Phone -->
-                    <label> <i class="fas fa-phone"></i> Phone
-                        <input name="phone" id="input-phone" type="tel" placeholder="Your Phone" required>
-                    </label>
-                </div>
-            </div>
+            </form>
+
             <!-- Links -->
-            <label> <i class="fas fa-link"></i> Links
+            <form action="#" data-parsley-trigger="submit focusin focusout keypress ">
+                <label for="input-web-sites"> <i class="fas fa-link"></i> Links </label>
                 <div class="grid-x ">
                     <div class="cell small-11">
-                        <input name="web-sites" id="input-web-sites" type="url" placeholder="Your Site/Blog Link">
+                        <input name="input-web-sites" id="input-web-sites" type="url" placeholder="Your Site/Blog Link" required>
                     </div>
                     <div class="cell small-1">
-                        <button id="button-web-sites_add" class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                        <button id="button-web-sites_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
                     </div>
                 </div>
-            </label>
+            </form>
             <!-- end Links -->
 
             <!-- Social Media -->
-            <label> <i class="fas fa-network-wired"></i> Social Media
-                <div class="grid-x">
-                    <div class="cell small-4">
-                        <select id="select-social-media" name="social-media" class="fab">
-                            <option value="" selected disabled>Select</option>
-                            <option value="&#xf0e1;">&#xf0e1; LinkedIn</option>
-                            <option value="&#xf09b;">&#xf09b; GitHub</option>
-                            <option value="&#xf09a;">&#xf09a; Facebook</option>
-                            <option value="&#xf099;">&#xf099; Twitter</option>
-                            <option value="&#xf296;">&#xf296; GitLab</option>
-                            <option value="&#xf171;">&#xf171; BitBucket</option>
-                            <option value="&#xf1b4;">&#xf1b4; Behance</option>
-                            <option value="&#xf37c;">&#xf37c; blogger</option>
-                            <option value="&#xf17d;">&#xf17d; Dribbble</option>
-                            <option value="&#xf167;">&#xf167; Youtube</option>
-                            <option value="&#xf0d5;">&#xf0d5; Google+</option>
-                            <option value="&#xf16d;">&#xf16d; Instagram</option>
-                            <option value="&#xf3c7;">&#xf3c7; Medium</option>
-                            <option value="&#xf231;">&#xf231; Pinterest</option>
-                            <option value="&#xf1d6;">&#xf1d6; QQ</option>
-                            <option value="&#xf2c4;">&#xf2c4; Quora</option>
-                            <option value="&#xf17e;">&#xf17e; Skype</option>
-                            <option value="&#xf198;">&#xf198; Slack</option>
-                            <option value="&#xf16c;">&#xf16c; StackOverflow</option>
-                            <option value="&#xf3fe;">&#xf3fe; Telegram</option>
-                            <option value="&#xf173;">&#xf173; Tumblr</option>
-                            <option value="&#xf1e8;">&#xf1e8; Twitch</option>
-                            <option value="&#xf40a;">&#xf40a; Vimeo</option>
-                        </select>
+            <form action="#" data-parsley-validate data-parsley-trigger="submit focusin focusout keypress ">
+                <label> <i class="fas fa-network-wired"></i> Social Media
+                    <div class="grid-x">
+                        <div class="cell small-4">
+                            <select id="select-social-media" name="social-media" class="fab" required>
+                                <option value="" selected disabled>Select</option>
+                                <option value="&#xf0e1;">&#xf0e1; LinkedIn</option>
+                                <option value="&#xf09b;">&#xf09b; GitHub</option>
+                                <option value="&#xf09a;">&#xf09a; Facebook</option>
+                                <option value="&#xf099;">&#xf099; Twitter</option>
+                                <option value="&#xf296;">&#xf296; GitLab</option>
+                                <option value="&#xf171;">&#xf171; BitBucket</option>
+                                <option value="&#xf1b4;">&#xf1b4; Behance</option>
+                                <option value="&#xf37c;">&#xf37c; blogger</option>
+                                <option value="&#xf17d;">&#xf17d; Dribbble</option>
+                                <option value="&#xf167;">&#xf167; Youtube</option>
+                                <option value="&#xf0d5;">&#xf0d5; Google+</option>
+                                <option value="&#xf16d;">&#xf16d; Instagram</option>
+                                <option value="&#xf3c7;">&#xf3c7; Medium</option>
+                                <option value="&#xf231;">&#xf231; Pinterest</option>
+                                <option value="&#xf1d6;">&#xf1d6; QQ</option>
+                                <option value="&#xf2c4;">&#xf2c4; Quora</option>
+                                <option value="&#xf17e;">&#xf17e; Skype</option>
+                                <option value="&#xf198;">&#xf198; Slack</option>
+                                <option value="&#xf16c;">&#xf16c; StackOverflow</option>
+                                <option value="&#xf3fe;">&#xf3fe; Telegram</option>
+                                <option value="&#xf173;">&#xf173; Tumblr</option>
+                                <option value="&#xf1e8;">&#xf1e8; Twitch</option>
+                                <option value="&#xf40a;">&#xf40a; Vimeo</option>
+                            </select>
+                        </div>
+                        <div class="cell small-7">
+                            <input id="input-social-media" type="url" placeholder="Your Profile Link" required>
+                        </div>
+                        <div class="cell small-1">
+                            <button id="button-social-media_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
+                        </div>
                     </div>
-                    <div class="cell small-7">
-                        <input id="input-social-media" type="url" placeholder="Your Profile Link">
-                    </div>
-                    <div class="cell small-1">
-                        <button id="button-social-media_add" class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
-                    </div>
-                </div>
-            </label>
+                </label>
+            </form>
             <!-- end Social Media -->
-
-            <!-- Resume -->
-            <label> <i class="fas fa-pencil-alt"></i> Resume
-                <textarea name="resume" id="input-resume" placeholder="Your Resume..."></textarea>
-            </label>
+            <form action="#" data-parsley-trigger="focusin focusout keypress">
+                <!-- Resume -->
+                <label for="input-resume"> <i class="fas fa-pencil-alt"></i> Resume </label>
+                <textarea name="input-resume" id="input-resume" placeholder="Your Resume..." data-parsley-minwords="20"></textarea>
+                <button type="submit">Test Button</button>
             </form>
 
             <!-- end Resume -->
@@ -428,11 +432,20 @@
         </div>
     </div>
 </div>
-
+<!-- main app scripts -->
 <script src="js/vendor/jquery/jquery.js"></script>
+<!-- foundation scripts -->
 <script src="js/vendor/foundation/what-input.js"></script>
 <script src="js/vendor/foundation/foundation.min.js"></script>
+<!-- parsley scripts -->
 <script src="js/vendor/parsley/parsley.min.js"></script>
+<!-- parsley extra scripts -->
+<!--<script src="js/vendor/parsley/extra/plugin/bind.js"></script>-->
+<!--<script src="js/vendor/parsley/extra/validator/comparison.js"></script>-->
+<script src="js/vendor/parsley/extra/validator/dateiso.js"></script>
+<script src="js/vendor/parsley/extra/validator/words.js"></script>
+<script src="js/vendor/parsley/extra/validator/luhn.js"></script>
+<script src="js/vendor/parsley/extra/validator/notequalto.js"></script>
 <!-- main app scripts -->
 <script src="js/main.js"></script>
 </body>

@@ -1706,10 +1706,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     *
     * @param {String}   name
     * @param {Mixed}    requirements      optional
-    * @param {Number}   priority          optional
-    * @param {Boolean}  isDomConstraint   optional
     */
-    addConstraint: function addConstraint(name, requirements, priority, isDomConstraint) {
+    addConstraint: function addConstraint(name, requirements) {
 
       if (window.Parsley._validatorRegistry.validators[name]) {
         var constraint = new Constraint(this, name, requirements, priority, isDomConstraint);
@@ -1736,7 +1734,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
     // Update a constraint (Remove + re-add)
     updateConstraint: function updateConstraint(name, parameters, priority) {
-      return this.removeConstraint(name).addConstraint(name, parameters, priority);
+      return this.removeConstraint(name).addConstraint(name, parameters);
     },
 
     // # Internals
@@ -1757,7 +1755,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       this.constraintsByName = constraintsByName;
 
       // then re-add Parsley DOM-API constraints
-      for (var name in this.options) this.addConstraint(name, this.options[name], undefined, true);
+      for (var name in this.options) this.addConstraint(name, this.options[name]);
 
       // finally, bind special HTML5 constraints
       return this._bindHtml5Constraints();
@@ -1767,30 +1765,30 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     // Bind specific HTML5 constraints to be HTML5 compliant
     _bindHtml5Constraints: function _bindHtml5Constraints() {
       // html5 required
-      if (null !== this.element.getAttribute('required')) this.addConstraint('required', true, undefined, true);
+      if (null !== this.element.getAttribute('required')) this.addConstraint('required', true);
 
       // html5 pattern
-      if (null !== this.element.getAttribute('pattern')) this.addConstraint('pattern', this.element.getAttribute('pattern'), undefined, true);
+      if (null !== this.element.getAttribute('pattern')) this.addConstraint('pattern', this.element.getAttribute('pattern'));
 
       // range
       var min = this.element.getAttribute('min');
       var max = this.element.getAttribute('max');
-      if (null !== min && null !== max) this.addConstraint('range', [min, max], undefined, true);
+      if (null !== min && null !== max) this.addConstraint('range', [min, max]);
 
       // HTML5 min
-      else if (null !== min) this.addConstraint('min', min, undefined, true);
+      else if (null !== min) this.addConstraint('min', min);
 
         // HTML5 max
-        else if (null !== max) this.addConstraint('max', max, undefined, true);
+        else if (null !== max) this.addConstraint('max', max);
 
       // length
-      if (null !== this.element.getAttribute('minlength') && null !== this.element.getAttribute('maxlength')) this.addConstraint('length', [this.element.getAttribute('minlength'), this.element.getAttribute('maxlength')], undefined, true);
+      if (null !== this.element.getAttribute('minlength') && null !== this.element.getAttribute('maxlength')) this.addConstraint('length', [this.element.getAttribute('minlength'), this.element.getAttribute('maxlength')]);
 
       // HTML5 minlength
-      else if (null !== this.element.getAttribute('minlength')) this.addConstraint('minlength', this.element.getAttribute('minlength'), undefined, true);
+      else if (null !== this.element.getAttribute('minlength')) this.addConstraint('minlength', this.element.getAttribute('minlength'));
 
         // HTML5 maxlength
-        else if (null !== this.element.getAttribute('maxlength')) this.addConstraint('maxlength', this.element.getAttribute('maxlength'), undefined, true);
+        else if (null !== this.element.getAttribute('maxlength')) this.addConstraint('maxlength', this.element.getAttribute('maxlength'));
 
       // html5 types
       var type = Utils.getType(this.element);
@@ -1800,10 +1798,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         return this.addConstraint('type', ['number', {
           step: this.element.getAttribute('step') || '1',
           base: min || this.element.getAttribute('value')
-        }], undefined, true);
+        }]);
         // Regular other HTML5 supported types
       } else if (/^(email|url|range|date)$/i.test(type)) {
-          return this.addConstraint('type', type, undefined, true);
+          return this.addConstraint('type', type);
         }
       return this;
     },
@@ -1904,7 +1902,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
         fieldConstraints = this.$elements[i].data('FieldMultiple')._refreshConstraints().constraints;
 
-        for (var j = 0; j < fieldConstraints.length; j++) this.addConstraint(fieldConstraints[j].name, fieldConstraints[j].requirements, fieldConstraints[j].priority, fieldConstraints[j].isDomConstraint);
+        for (var j = 0; j < fieldConstraints.length; j++) this.addConstraint(fieldConstraints[j].name, fieldConstraints[j].requirements);
       }
 
       return this;
