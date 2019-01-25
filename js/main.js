@@ -4,21 +4,22 @@ $("form").parsley();
 // get elements ------------------------------
 
 // functions ----------------------------------
-function addInfo(inputID) {
-    $('#input-' + inputID).parsley().on('field:success', function() {
+function addInfo(inputName) {
+    $('#input-' + inputName).parsley().on('field:success', function() {
         // In here, `this` is the parlsey instance of #some-input
-        let to = document.getElementById('cv__' + inputID);
+        let to = document.getElementById('cv__' + inputName);
         to.textContent = this.value;
     });
 }
 
-function addWebSite(inputID) {
+function addWebSite(inputName) {
     // get elements
-    let input = document.getElementById("input-" + inputID);
-    let button = document.getElementById("button-" + inputID + "_add");
+    let input = document.getElementById("input-" + inputName);
+    let button = document.getElementById("button-" + inputName + "_add");
 
     button.addEventListener("click", ($event) => {
-        if ($('#input-' + inputID).parsley().isValid() && input.value !== "" ) {
+        $event.preventDefault();
+        if ($('#input-' + inputName).parsley().isValid() && input.value !== "" ) {
 
             let divTag = document.createElement("div");
 
@@ -36,7 +37,7 @@ function addWebSite(inputID) {
             linkTag.appendChild(linkText);
             linkTag.title = input.value;
             linkTag.href = input.value;
-            let to = document.getElementById('cv__' + inputID);
+            let to = document.getElementById('cv__' + inputName);
             divTag.appendChild(iTag);
             divTag.appendChild(linkTag);
             to.appendChild(divTag);
@@ -44,106 +45,114 @@ function addWebSite(inputID) {
     });
 }
 
-function addSocialMedia(inputID) {
+function addSocialMedia(inputName) {
     // get elements
-    let input = document.getElementById("input-" + inputID);
-    let select = document.getElementById("select-" + inputID);
-    let button = document.getElementById("button-" + inputID + "_add");
-
-    button.addEventListener("click", ($event) => {
-        if ($('#input-' + inputID).parsley().isValid() && $('#select-' + inputID).parsley().isValid() && input.value !== ""  ) {
-
-            let divTag = document.createElement("div");
-
-        // create <i class="fas"> &#x....; </i>
-        let iTag = document.createElement("i");
-        iTag.classList.add("fab");
-        iTag.textContent = select.value;
-
-        // create link tag
-        let linkTag = document.createElement("a");
-        let linkText = document.createTextNode(input.value);
-
-        linkTag.appendChild(linkText);
-        linkTag.title = input.value;
-        linkTag.href = input.value;
-
-        // get the element to write inside
-        let to = document.getElementById('cv__' + inputID);
-        divTag.appendChild(iTag);
-        divTag.appendChild(linkTag);
-        to.appendChild(divTag);
-    }
-    });
-}
-
-function addSkill(inputID) {
-    // get elements
-    let input = document.getElementById("input-" + inputID);
-    let select = document.getElementById("select-" + inputID + "_level");
-    let button = document.getElementById("button-" + inputID + "_add");
+    let input = document.getElementById("input-" + inputName);
+    let select = document.getElementById("select-" + inputName);
+    let button = document.getElementById("button-" + inputName + "_add");
 
     button.addEventListener("click", ($event) => {
         $event.preventDefault();
-        let divTag = document.createElement("div");
+        if ($('#input-' + inputName).parsley().isValid() && $('#select-' + inputName).parsley().isValid() && input.value !== "") {
 
-        // create <progress class="secondary float-right" max="100" value="85"></progress>
-        let progressTag = document.createElement("progress");
-        progressTag.classList.add("secondary");
-        progressTag.classList.add("float-right");
-        progressTag.max = 100;
-        progressTag.value = select.value;
+            let divTag = document.createElement("div");
 
-        // create <span> ... </span>
-        let spanTag = document.createElement("span");
-        spanTag.textContent = input.value;
+            // create <i class="fas"> &#x....; </i>
+            let iTag = document.createElement("i");
+            iTag.classList.add("fab");
+            iTag.textContent = select.value;
 
-        // get the element to write inside
-        let to = document.getElementById('cv__' + inputID + "s");
-        divTag.appendChild(spanTag);
-        divTag.appendChild(progressTag);
-        to.appendChild(divTag);
+            // create link tag
+            let linkTag = document.createElement("a");
+            let linkText = document.createTextNode(input.value);
+
+            linkTag.appendChild(linkText);
+            linkTag.title = input.value;
+            linkTag.href = input.value;
+
+            // get the element to write inside
+            let to = document.getElementById('cv__' + inputName);
+            divTag.appendChild(iTag);
+            divTag.appendChild(linkTag);
+            to.appendChild(divTag);
+        }
     });
 }
 
-function addLanguage(inputID) {
+function addSkill(inputName) {
     // get elements
-    let input = document.getElementById("input-" + inputID);
-    let select = document.getElementById("select-" + inputID + "_level");
-    let button = document.getElementById("button-" + inputID + "_add");
+    let input = document.getElementById("input-" + inputName);
+    let select = document.getElementById("select-" + inputName + "_level");
+    let button = document.getElementById("button-" + inputName + "_add");
+
+    button.addEventListener("click", ($event) => {
+        $event.preventDefault();
+        if ( $('#input-' + inputName).parsley().isValid() && $('#select-' + inputName + "_level").parsley().isValid() && input.value !== "") {
+
+            let divTag = document.createElement("div");
+
+            // create <progress class="secondary float-right" max="100" value="85"></progress>
+            let progressTag = document.createElement("progress");
+            progressTag.classList.add("secondary");
+            progressTag.classList.add("float-right");
+            progressTag.max = 100;
+            progressTag.value = select.value;
+
+            // create <span> ... </span>
+            let spanTag = document.createElement("span");
+            spanTag.textContent = input.value;
+
+            // get the element to write inside
+            let to = document.getElementById('cv__' + inputName + "s");
+            divTag.appendChild(spanTag);
+            divTag.appendChild(progressTag);
+            to.appendChild(divTag);
+        }
+    });
+}
+
+function addLanguage(inputName) {
+    // get elements
+    let input = document.getElementById("input-" + inputName);
+    let select = document.getElementById("select-" + inputName + "_level");
+    let button = document.getElementById("button-" + inputName + "_add");
 
     button.addEventListener("click", ($event) => {
         $event.preventDefault();
         // create <small> Level </small>
-        let smallTag = document.createElement("small");
-        smallTag.textContent = " ( " + select.value + " ) ";
+        if ( $('#input-' + inputName).parsley().isValid() && $('#select-' + inputName + "_level").parsley().isValid() && input.value !== "") {
 
-        // create <div> ... </div>
-        let divTag = document.createElement("div");
-        divTag.textContent = input.value;
+            let smallTag = document.createElement("small");
+            smallTag.textContent = " ( " + select.value + " ) ";
 
-        // get the element to write inside
-        let to = document.getElementById('cv__' + inputID + "s");
-        divTag.appendChild(smallTag);
-        to.appendChild(divTag);
+            // create <div> ... </div>
+            let divTag = document.createElement("div");
+            divTag.textContent = input.value;
+
+            // get the element to write inside
+            let to = document.getElementById('cv__' + inputName + "s");
+            divTag.appendChild(smallTag);
+            to.appendChild(divTag);
+        }
     });
 }
 
-function addInterest(inputID) {
+function addInterest(inputName) {
     // get elements
-    let input = document.getElementById("input-" + inputID);
-    let button = document.getElementById("button-" + inputID + "_add");
+    let input = document.getElementById("input-" + inputName);
+    let button = document.getElementById("button-" + inputName + "_add");
 
     button.addEventListener("click", ($event) => {
         $event.preventDefault();
+        if ( $('#input-' + inputName).parsley().isValid() && input.value !== "") {
+            // create <div> ... </div>
+            let divTag = document.createElement("div");
+            divTag.textContent = input.value;
 
-        // create <div> ... </div>
-        let divTag = document.createElement("div");
-        divTag.textContent = input.value;
-
-        // get the element to write inside
-        let to = document.getElementById('cv__' + inputID + "s");
-        to.appendChild(divTag);
+            // get the element to write inside
+            let to = document.getElementById('cv__' + inputName + "s");
+            to.appendChild(divTag);
+        }
     });
 }
 
@@ -296,13 +305,15 @@ function addEducation(blockID) {
 }
 
 function displayTheRequire(cssClassName) {
-    let inputs = document.querySelectorAll("input[required]");
+    let inputs = document.querySelectorAll("[required]");
     for (let i=0 ; i<inputs.length; i++) {
-        let name = document.querySelector('label[for=' + inputs[i].getAttribute("name") + ']');
-        let spanTag = document.createElement("span");
-        spanTag.textContent = "*";
-        spanTag.classList.add(cssClassName);
-        name.appendChild(spanTag);
+        let name = document.querySelector('label[for=' + inputs[i].id + ']');
+        if ( name ) {
+            let spanTag = document.createElement("span");
+            spanTag.textContent = " * ";
+            spanTag.classList.add(cssClassName);
+            name.appendChild(spanTag);
+        }
     }
 }
 

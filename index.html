@@ -20,36 +20,36 @@
 <div class="bg-gray grid-container fluid">
     <div class="grid-x grid-padding-x">
         <div class="cell small-4 ">
-            <form id="form" action="#" data-parsley-trigger="focusin focusout keypress">
+            <form id="form" data-parsley-trigger="focusin focusout keypress">
                 <!-- Name Form -->
                 <label for="input-name"> <i class="fas fa-signature"></i> Full Name </label>
-                <input name="input-name" id="input-name" type="text" placeholder="Your Full Name" pattern="[a-zA-Z ]{3,30}" data-parsley-minwords="2" minlength="3" required>
+                <input name="name" id="input-name" type="text" placeholder="Your Full Name" pattern="[a-zA-Z ]{3,30}" data-parsley-minwords="2" minlength="3" required >
 
                 <!-- desired job -->
                 <label for="input-job"> <i class="fas fa-briefcase"></i> Desired job </label>
-                <input name="input-job" id="input-job" type="text" placeholder="Your Desired job" minlength="3">
+                <input name="job" id="input-job" type="text" placeholder="Your Desired job" minlength="3">
 
                 <!-- information block -->
                 <div class="grid-x grid-margin-x">
                     <div class="cell small-6">
                         <!-- Email -->
                         <label for="input-email"> <i class="fas fa-at"></i> Email </label>
-                        <input name="input-email" data-parsley-type="email" id="input-email" type="email" placeholder="Your Email" required>
+                        <input name="email" data-parsley-type="email" id="input-email" type="email" placeholder="Your Email" required>
                     </div>
                     <div class="cell small-6">
                         <!-- Phone -->
                         <label for="input-phone"> <i class="fas fa-phone"></i> Phone </label>
-                        <input name="input-phone" id="input-phone" type="tel" data-parsley-length="[9, 14]" pattern="^[+]{0,1}[0-9]{1,4}[0-9]*" placeholder="Your Phone Number" required>
+                        <input name="phone" id="input-phone" type="tel" data-parsley-length="[9, 14]" pattern="^[+]{0,1}[0-9]{1,4}[0-9]*" placeholder="Your Phone Number" required>
                     </div>
                 </div>
             </form>
 
             <!-- Links -->
-            <form action="#" data-parsley-trigger="submit focusin focusout keypress ">
-                <label for="input-web-sites"> <i class="fas fa-link"></i> Links </label>
+            <form data-parsley-trigger="submit focusin focusout keypress ">
                 <div class="grid-x ">
+                    <label for="input-web-sites"> <i class="fas fa-link"></i> Links </label>
                     <div class="cell small-11">
-                        <input name="input-web-sites" id="input-web-sites" type="url" placeholder="Your Site/Blog Link" required>
+                        <input name="web-sites" id="input-web-sites" type="url" placeholder="Your Site/Blog Link" required>
                     </div>
                     <div class="cell small-1">
                         <button id="button-web-sites_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
@@ -59,52 +59,50 @@
             <!-- end Links -->
 
             <!-- Social Media -->
-            <form action="#" data-parsley-validate data-parsley-trigger="submit focusin focusout keypress ">
-                <label> <i class="fas fa-network-wired"></i> Social Media
-                    <div class="grid-x">
-                        <div class="cell small-4">
-                            <select id="select-social-media" name="social-media" class="fab" required>
-                                <option value="" selected disabled>Select</option>
-                                <option value="&#xf0e1;">&#xf0e1; LinkedIn</option>
-                                <option value="&#xf09b;">&#xf09b; GitHub</option>
-                                <option value="&#xf09a;">&#xf09a; Facebook</option>
-                                <option value="&#xf099;">&#xf099; Twitter</option>
-                                <option value="&#xf296;">&#xf296; GitLab</option>
-                                <option value="&#xf171;">&#xf171; BitBucket</option>
-                                <option value="&#xf1b4;">&#xf1b4; Behance</option>
-                                <option value="&#xf37c;">&#xf37c; blogger</option>
-                                <option value="&#xf17d;">&#xf17d; Dribbble</option>
-                                <option value="&#xf167;">&#xf167; Youtube</option>
-                                <option value="&#xf0d5;">&#xf0d5; Google+</option>
-                                <option value="&#xf16d;">&#xf16d; Instagram</option>
-                                <option value="&#xf3c7;">&#xf3c7; Medium</option>
-                                <option value="&#xf231;">&#xf231; Pinterest</option>
-                                <option value="&#xf1d6;">&#xf1d6; QQ</option>
-                                <option value="&#xf2c4;">&#xf2c4; Quora</option>
-                                <option value="&#xf17e;">&#xf17e; Skype</option>
-                                <option value="&#xf198;">&#xf198; Slack</option>
-                                <option value="&#xf16c;">&#xf16c; StackOverflow</option>
-                                <option value="&#xf3fe;">&#xf3fe; Telegram</option>
-                                <option value="&#xf173;">&#xf173; Tumblr</option>
-                                <option value="&#xf1e8;">&#xf1e8; Twitch</option>
-                                <option value="&#xf40a;">&#xf40a; Vimeo</option>
-                            </select>
-                        </div>
-                        <div class="cell small-7">
-                            <input id="input-social-media" type="url" placeholder="Your Profile Link" required>
-                        </div>
-                        <div class="cell small-1">
-                            <button id="button-social-media_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
-                        </div>
+            <form data-parsley-validate data-parsley-trigger="submit focusin focusout keypress ">
+                <label for="select-social-media"> <i class="fas fa-network-wired"></i> Social Media </label>
+                <div class="grid-x">
+                    <div class="cell small-4">
+                        <select id="select-social-media" name="social-media" class="fab" required>
+                            <option value="" selected disabled>Select</option>
+                            <option value="&#xf0e1;">&#xf0e1; LinkedIn</option>
+                            <option value="&#xf09b;">&#xf09b; GitHub</option>
+                            <option value="&#xf09a;">&#xf09a; Facebook</option>
+                            <option value="&#xf099;">&#xf099; Twitter</option>
+                            <option value="&#xf296;">&#xf296; GitLab</option>
+                            <option value="&#xf171;">&#xf171; BitBucket</option>
+                            <option value="&#xf1b4;">&#xf1b4; Behance</option>
+                            <option value="&#xf37c;">&#xf37c; blogger</option>
+                            <option value="&#xf17d;">&#xf17d; Dribbble</option>
+                            <option value="&#xf167;">&#xf167; Youtube</option>
+                            <option value="&#xf0d5;">&#xf0d5; Google+</option>
+                            <option value="&#xf16d;">&#xf16d; Instagram</option>
+                            <option value="&#xf3c7;">&#xf3c7; Medium</option>
+                            <option value="&#xf231;">&#xf231; Pinterest</option>
+                            <option value="&#xf1d6;">&#xf1d6; QQ</option>
+                            <option value="&#xf2c4;">&#xf2c4; Quora</option>
+                            <option value="&#xf17e;">&#xf17e; Skype</option>
+                            <option value="&#xf198;">&#xf198; Slack</option>
+                            <option value="&#xf16c;">&#xf16c; StackOverflow</option>
+                            <option value="&#xf3fe;">&#xf3fe; Telegram</option>
+                            <option value="&#xf173;">&#xf173; Tumblr</option>
+                            <option value="&#xf1e8;">&#xf1e8; Twitch</option>
+                            <option value="&#xf40a;">&#xf40a; Vimeo</option>
+                        </select>
                     </div>
-                </label>
+                    <div class="cell small-7">
+                        <input id="input-social-media" type="url" placeholder="Your Profile Link" required>
+                    </div>
+                    <div class="cell small-1">
+                        <button id="button-social-media_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
+                    </div>
+                </div>
             </form>
             <!-- end Social Media -->
-            <form action="#" data-parsley-trigger="focusin focusout keypress">
+            <form data-parsley-trigger="focusout keypress">
                 <!-- Resume -->
                 <label for="input-resume"> <i class="fas fa-pencil-alt"></i> Resume </label>
-                <textarea name="input-resume" id="input-resume" placeholder="Your Resume..." data-parsley-minwords="20"></textarea>
-                <button type="submit">Test Button</button>
+                <textarea name="resume" id="input-resume" placeholder="Your Resume..." data-parsley-minwords="20" required></textarea>
             </form>
 
             <!-- end Resume -->
@@ -123,7 +121,7 @@
                 <div class="tabs-panel is-active" id="experience">
                     <!-- Role -->
                     <label> <i class="far fa-user"></i> Role
-                        <input id="experience_role" type="text" placeholder="Your Role">
+                        <input id="experience_role" type="text" placeholder="Your Role" required>
                     </label>
                     <label> <i class="far fa-building"></i> Company
                         <input  id="experience_company" type="text" placeholder="Your Company">
@@ -143,15 +141,15 @@
                         </div>
                     </div>
                     <!-- Experience Description -->
-                    <label> <i class="fas fa-pencil-alt"></i> Description
-                        <textarea id="experience_description" name="" placeholder="Describe Your Experience"></textarea>
-                    </label>
-
-                    <!-- Experience Tags -->
                     <label> <i class="fas fa-tags"></i> Tags
                         <input type="text" id="experience_tags" name="" placeholder="Your Experience Tags (Tag1, Tag2, ...)">
                     </label>
-                    <button id="button-experience_add" class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+
+                    <!-- Experience Tags -->
+                    <label> <i class="fas fa-pencil-alt"></i> Description
+                        <textarea id="experience_description" name="" placeholder="Describe Your Experience"></textarea>
+                    </label>
+                    <button id="button-experience_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
                 </div>
 
                 <!-- projects -->
@@ -187,7 +185,7 @@
                     <label> <i class="fas fa-tags"></i> Tags
                         <input type="text" id="project_tags" name="" placeholder="Your Projects Tags (Tag1, Tag2, ...)">
                     </label>
-                    <button id="button-project_add" class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                    <button id="button-project_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
                 </div>
                 <!-- educations -->
                 <div class="tabs-panel" id="educations">
@@ -216,237 +214,243 @@
                     <label> <i class="fas fa-pencil-alt"></i> Description
                         <textarea id="education_description" placeholder="Describe Your Education"></textarea>
                     </label>
-                    <button id="button-education_add" class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                    <button id="button-education_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
                 </div>
                 <!-- skills -->
                 <div class="tabs-panel" id="skills">
-                    <div class="grid-x">
-                        <div class="cell small-8">
-                            <input id="input-skill" type="text" placeholder="Your Skill">
+                    <form data-parsley-validate data-parsley-trigger="submit focusout keypress">
+                        <div class="grid-x">
+                            <div class="cell small-8">
+                                <input id="input-skill" type="text" placeholder="Your Skill" required>
+                            </div>
+                            <div class="cell small-4">
+                                <select name="skill_level" id="select-skill_level" required>
+                                    <option disabled selected>Level</option>
+                                    <option value="50">Beginner</option>
+                                    <option value="75">Intermediate</option>
+                                    <option value="100">Expert</option>
+                                </select>
+                            </div>
+                            <button id="button-skill_add" class="button expanded" type="submit">
+                                <i class="fas fa-plus-square"></i>
+                            </button>
                         </div>
-                        <div class="cell small-4">
-                            <label for="select-skill_level"></label>
-                            <select name="skill_level" id="select-skill_level" required>
-                                <option disabled selected>Level</option>
-                                <option value="50">Beginner</option>
-                                <option value="75">Intermediate</option>
-                                <option value="100">Expert</option>
-                            </select>
-                        </div>
-                        <button id="button-skill_add" class="button expanded" type="button">
-                            <i class="fas fa-plus-square"></i>
-                        </button>
-                    </div>
+                    </form>
                 </div>
 
                 <!-- languages -->
                 <div class="tabs-panel" id="languages">
-                    <div class="grid-x">
-                        <div class="cell small-8">
-                            <input id="input-language" type="text" placeholder="Your language">
+                    <form data-parsley-validate data-parsley-trigger="submit focusout keypress" >
+                        <div class="grid-x">
+                            <div class="cell small-8">
+                                <input id="input-language" type="text" placeholder="Your language" required>
+                            </div>
+                            <div class="cell small-4">
+                                <select name="language_level" id="select-language_level" required>
+                                    <option disabled selected>Level</option>
+                                    <option value="Beginner">Beginner</option>
+                                    <option value="Conversational">Conversational</option>
+                                    <option value="Business">Business </option>
+                                    <option value="Fluent">Fluent  </option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="cell small-4">
-                            <label for="select-language_level"></label>
-                            <select name="language_level" id="select-language_level" required>
-                                <option disabled selected>Level</option>
-                                <option value="Beginner">Beginner</option>
-                                <option value="Conversational">Conversational</option>
-                                <option value="Business">Business </option>
-                                <option value="Fluent">Fluent  </option>
-                            </select>
-                        </div>
-                    </div>
-                    <button id="button-language_add" class="button expanded" type="button">
-                        <i class="fas fa-plus-square"></i>
-                    </button>
+                        <button id="button-language_add" class="button expanded" type="submit">
+                            <i class="fas fa-plus-square"></i>
+                        </button>
+                    </form>
                 </div>
 
                 <!-- Interests -->
                 <div class="tabs-panel" id="interests">
-                    <input id="input-interest" type="text" placeholder="Your interest">
-                    <button id="button-interest_add" class="button expanded" type="button"><i class="fas fa-plus-square"></i></button>
+                    <form data-parsley-validate data-parsley-trigger="focusout submit keypress" >
+                        <input id="input-interest" type="text" placeholder="Your interest" required>
+                        <button id="button-interest_add" class="button expanded" type="submit">
+                            <i class="fas fa-plus-square"></i>
+                        </button>
+                    </form>
+                </div>
                 </div>
             </div>
-        </div>
 
-        <!-- cv paper -->
-        <div class="bg--light-gray cell small-8">
-            <div class="paper cv">
-                <!-- sidebar of cv -->
-                <div class="cv__sidebar">
-                    <img class="thumbnail sidebar__img" src="https://avatars1.githubusercontent.com/u/16634831?s=460&v=4"
-                         alt="profile.">
-                    <h1 id="cv__name" class="cv__title sidebar__name">Sakhri Houssem Eddine</h1>
-                    <h2 id="cv__job" class="cv__title sidebar__job">Full Stack Developer</h2>
-                    <hr>
-                    <dl class="sidebar__info">
-                        <dd><i class="fas fa-at"></i> <span id="cv__email">s.houssem.e@gmail.com</span></dd>
-                        <dd><i class="fas fa-phone"></i> <span id="cv__phone">00213777850224</span></dd>
-                        <dd id="cv__web-sites">
-                            <i class="fas fa-globe-europe"></i> <a href="http://sakhrihoussem.me">sakhrihoussem.me</a>
-                        </dd>
-                        <dd id="cv__social-media">
-                            <div><i class="fab fa-github"></i> SakhriHoussem</div>
-                            <div><i class="fab fa-twitter"></i> @SakhriHoussem</div>
-                            <div><i class="fab fa-linkedin-in"></i> SakhriHoussem</div>
-                        </dd>
+            <!-- cv paper -->
+            <div class="bg--light-gray cell small-8">
+                <div class="paper cv">
+                    <!-- sidebar of cv -->
+                    <div class="cv__sidebar">
+                        <img class="thumbnail sidebar__img" src="https://avatars1.githubusercontent.com/u/16634831?s=460&v=4"
+                             alt="profile.">
+                        <h1 id="cv__name" class="cv__title sidebar__name">Sakhri Houssem Eddine</h1>
+                        <h2 id="cv__job" class="cv__title sidebar__job">Full Stack Developer</h2>
+                        <hr>
+                        <dl class="sidebar__info">
+                            <dd><i class="fas fa-at"></i> <span id="cv__email">s.houssem.e@gmail.com</span></dd>
+                            <dd><i class="fas fa-phone"></i> <span id="cv__phone">00213777850224</span></dd>
+                            <dd id="cv__web-sites">
+                                <i class="fas fa-globe-europe"></i> <a href="http://sakhrihoussem.me">sakhrihoussem.me</a>
+                            </dd>
+                            <dd id="cv__social-media">
+                                <div><i class="fab fa-github"></i> SakhriHoussem</div>
+                                <div><i class="fab fa-twitter"></i> @SakhriHoussem</div>
+                                <div><i class="fab fa-linkedin-in"></i> SakhriHoussem</div>
+                            </dd>
 
-                        <!-- skills -->
-                        <dt class="sidebar__title clearfix"><i class="fas fa-wrench"></i> Skills</dt>
-                        <dd id="cv__skills">
-                            <div>
-                                <span>CSS & SASS</span>
-                                <progress class="secondary float-right" max="100" value="90"></progress>
-                            </div>
-                            <div>
-                                <span>Bootstrap</span>
-                                <progress class="secondary float-right" max="100" value="85"></progress>
-                            </div>
-                            <div>
-                                <span>Foundation</span>
-                                <progress class="secondary float-right" max="100" value="85"></progress>
-                            </div>
-                            <div>
-                                <span>PHP</span>
-                                <progress class="secondary float-right" max="100" value="80"></progress>
-                            </div>
-                            <div>
-                                <span>Symfony</span>
-                                <progress class="secondary float-right" max="100" value="80"></progress>
-                            </div>
-                            <div>
-                                <span>Python</span>
-                                <progress class="secondary float-right" max="100" value="80"></progress>
-                            </div>
-                        </dd>
+                            <!-- skills -->
+                            <dt class="sidebar__title clearfix"><i class="fas fa-wrench"></i> Skills</dt>
+                            <dd id="cv__skills">
+                                <div>
+                                    <span>CSS & SASS</span>
+                                    <progress class="secondary float-right" max="100" value="90"></progress>
+                                </div>
+                                <div>
+                                    <span>Bootstrap</span>
+                                    <progress class="secondary float-right" max="100" value="85"></progress>
+                                </div>
+                                <div>
+                                    <span>Foundation</span>
+                                    <progress class="secondary float-right" max="100" value="85"></progress>
+                                </div>
+                                <div>
+                                    <span>PHP</span>
+                                    <progress class="secondary float-right" max="100" value="80"></progress>
+                                </div>
+                                <div>
+                                    <span>Symfony</span>
+                                    <progress class="secondary float-right" max="100" value="80"></progress>
+                                </div>
+                                <div>
+                                    <span>Python</span>
+                                    <progress class="secondary float-right" max="100" value="80"></progress>
+                                </div>
+                            </dd>
 
-                        <!-- languages -->
-                        <dt class="sidebar__title"><i class="fas fa-language"></i> Languages</dt>
-                        <dd id="cv__languages">
-                            <div>English</div>
-                            <div>French</div>
-                            <div>Arabic</div>
-                        </dd>
+                            <!-- languages -->
+                            <dt class="sidebar__title"><i class="fas fa-language"></i> Languages</dt>
+                            <dd id="cv__languages">
+                                <div>English</div>
+                                <div>French</div>
+                                <div>Arabic</div>
+                            </dd>
 
-                        <!-- interests -->
-                        <dt class="sidebar__title"><i class="fas fa-plus"></i> Interests</dt>
-                        <dd id="cv__interests">
-                            <div>Film & Series</div>
-                            <div>Drawing</div>
-                            <div>Cocking</div>
-                        </dd>
-                    </dl>
-                </div>
-
-                <!-- main of cv -->
-                <div class="cv__main">
-
-                    <!-- Resume -->
-                    <h1 class="main__title"><i class="fas fa-pencil-alt"></i> Resume</h1>
-                    <div id="cv__resume">
-
-                        <p>Versatile, motivated and passionate web developer of new technologies.</p>
-                        <p>Having gained experience with multiple technologies and completing several development
-                            projects, whether in business or freelance.</p>
-                        <p>Are actively seeking a Web Developer position within a dynamic team and with technical and
-                            professional development opportunities.</p>
-
+                            <!-- interests -->
+                            <dt class="sidebar__title"><i class="fas fa-plus"></i> Interests</dt>
+                            <dd id="cv__interests">
+                                <div>Film & Series</div>
+                                <div>Drawing</div>
+                                <div>Cocking</div>
+                            </dd>
+                        </dl>
                     </div>
 
-                    <!-- Experiences -->
-                    <div id="cv__experiences">
-                        <h1 class="main__title"><i class="fas fa-briefcase"></i> Experiences</h1>
+                    <!-- main of cv -->
+                    <div class="cv__main">
 
-                        <div class="cv__experience">
-                            <h2>Full Stack Developer
-                                <small> November – December 2018</small>
-                            </h2>
-                            <h3>AhSB-Communication</h3>
-                            <p>It was my responsibility to :</p>
-                            <ul>
-                                <li>Perform unit tests under the supervision of the IANDI team on their Platform 1SPECT
-                                    using PHP Unit .
-                                </li>
-                                <li>Develop websites using Ez-platform technology.</li>
-                                <li>Using the YouTrack Task Management Tool.</li>
-                                <li>Using Sourcetree for Git</li>
-                            </ul>
-                            <div class="tags">
-                                <span class="label">PHP7.3</span>
-                                <span class="label">Symfony</span>
-                                <span class="label">Ez-Platform</span>
-                                <span class="label">CSS3</span>
-                                <span class="label">SASS</span>
-                                <span class="label">Git</span>
-                                <span class="label">YouTrack</span>
-                                <span class="label">SourceTree</span>
+                        <!-- Resume -->
+                        <h1 class="main__title"><i class="fas fa-pencil-alt"></i> Resume</h1>
+                        <div id="cv__resume">
+
+                            <p>Versatile, motivated and passionate web developer of new technologies.</p>
+                            <p>Having gained experience with multiple technologies and completing several development
+                                projects, whether in business or freelance.</p>
+                            <p>Are actively seeking a Web Developer position within a dynamic team and with technical and
+                                professional development opportunities.</p>
+
+                        </div>
+
+                        <!-- Experiences -->
+                        <div id="cv__experiences">
+                            <h1 class="main__title"><i class="fas fa-briefcase"></i> Experiences</h1>
+
+                            <div class="cv__experience">
+                                <h2>Full Stack Developer
+                                    <small> November – December 2018</small>
+                                </h2>
+                                <h3>AhSB-Communication</h3>
+                                <p>It was my responsibility to :</p>
+                                <ul>
+                                    <li>Perform unit tests under the supervision of the IANDI team on their Platform 1SPECT
+                                        using PHP Unit .
+                                    </li>
+                                    <li>Develop websites using Ez-platform technology.</li>
+                                    <li>Using the YouTrack Task Management Tool.</li>
+                                    <li>Using Sourcetree for Git</li>
+                                </ul>
+                                <div class="tags">
+                                    <span class="label">PHP7.3</span>
+                                    <span class="label">Symfony</span>
+                                    <span class="label">Ez-Platform</span>
+                                    <span class="label">CSS3</span>
+                                    <span class="label">SASS</span>
+                                    <span class="label">Git</span>
+                                    <span class="label">YouTrack</span>
+                                    <span class="label">SourceTree</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Projects -->
+                        <div id="cv__projects">
+                            <h1 class="main__title"><i class="fas fa-box-open"></i> Projects</h1>
+
+                            <div class="cv__project">
+                                <h2>Image Classification
+                                    <small>January - May 2018 (Master PFE)</small>
+                                </h2>
+                                <p>Development of a Desktop Application for Image Classification Using Python and the
+                                    TensorFlow Library for Machine Learning.</p>
+                                <div class="tags">
+                                    <span class="label">Python</span>
+                                    <span class="label">TensorFlow</span>
+                                </div>
+                            </div>
+
+                            <div class="cv__project">
+                                <h2>SEOR Web application
+                                    <small>January - May 2016 (License PFE)</small>
+                                </h2>
+                                <p>Development of a WEB application for the management of equipme for tntshe HSE department
+                                    of the company SEOR using PHP 5.4 and pure CSS3 for a responsive interface.</p>
+                                <div class="tags">
+                                    <span class="label">PHP5.4</span>
+                                    <span class="label">CSS3</span>
+                                </div>
                             </div>
                         </div>
 
-                    </div>
+                        <!-- Educations -->
+                        <div id="cv__educations">
+                            <h1 class="main__title"><i class=" fa fa-university"></i> Educations</h1>
 
-                    <!-- Projects -->
-                    <div id="cv__projects">
-                        <h1 class="main__title"><i class="fas fa-box-open"></i> Projects</h1>
-
-                        <div class="cv__project">
-                            <h2>Image Classification
-                                <small>January - May 2018 (Master PFE)</small>
-                            </h2>
-                            <p>Development of a Desktop Application for Image Classification Using Python and the
-                                TensorFlow Library for Machine Learning.</p>
-                            <div class="tags">
-                                <span class="label">Python</span>
-                                <span class="label">TensorFlow</span>
+                            <div class="cv__education">
+                                <h2>Master Degree in Computer Science
+                                    <small>Sept 2013 - Mai 2018</small>
+                                </h2>
+                                <h3>University of Science and Technologie Mohamed Boudiaf,Oran Algeria</h3>
+                                <p></p>
                             </div>
+
                         </div>
-
-                        <div class="cv__project">
-                            <h2>SEOR Web application
-                                <small>January - May 2016 (License PFE)</small>
-                            </h2>
-                            <p>Development of a WEB application for the management of equipme for tntshe HSE department
-                                of the company SEOR using PHP 5.4 and pure CSS3 for a responsive interface.</p>
-                            <div class="tags">
-                                <span class="label">PHP5.4</span>
-                                <span class="label">CSS3</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Educations -->
-                    <div id="cv__educations">
-                        <h1 class="main__title"><i class=" fa fa-university"></i> Educations</h1>
-
-                        <div class="cv__education">
-                            <h2>Master Degree in Computer Science
-                                <small>Sept 2013 - Mai 2018</small>
-                            </h2>
-                            <h3>University of Science and Technologie Mohamed Boudiaf,Oran Algeria</h3>
-                            <p></p>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- main app scripts -->
-<script src="js/vendor/jquery/jquery.js"></script>
-<!-- foundation scripts -->
-<script src="js/vendor/foundation/what-input.js"></script>
-<script src="js/vendor/foundation/foundation.min.js"></script>
-<!-- parsley scripts -->
-<script src="js/vendor/parsley/parsley.min.js"></script>
-<!-- parsley extra scripts -->
-<!--<script src="js/vendor/parsley/extra/plugin/bind.js"></script>-->
-<!--<script src="js/vendor/parsley/extra/validator/comparison.js"></script>-->
-<script src="js/vendor/parsley/extra/validator/dateiso.js"></script>
-<script src="js/vendor/parsley/extra/validator/words.js"></script>
-<script src="js/vendor/parsley/extra/validator/luhn.js"></script>
-<script src="js/vendor/parsley/extra/validator/notequalto.js"></script>
-<!-- main app scripts -->
-<script src="js/main.js"></script>
+    <!-- main app scripts -->
+    <script src="js/vendor/jquery/jquery.js"></script>
+    <!-- foundation scripts -->
+    <script src="js/vendor/foundation/what-input.js"></script>
+    <script src="js/vendor/foundation/foundation.min.js"></script>
+    <!-- parsley scripts -->
+    <script src="js/vendor/parsley/parsley.min.js"></script>
+    <!-- parsley extra scripts -->
+    <!--<script src="js/vendor/parsley/extra/plugin/bind.js"></script>-->
+    <!--<script src="js/vendor/parsley/extra/validator/comparison.js"></script>-->
+    <script src="js/vendor/parsley/extra/validator/dateiso.js"></script>
+    <script src="js/vendor/parsley/extra/validator/words.js"></script>
+    <script src="js/vendor/parsley/extra/validator/luhn.js"></script>
+    <script src="js/vendor/parsley/extra/validator/notequalto.js"></script>
+    <!-- main app scripts -->
+    <script src="js/main.js"></script>
 </body>
 </html>
