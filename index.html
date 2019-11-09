@@ -193,24 +193,25 @@
                 </div>
                 <!-- educations -->
                 <div class="tabs-panel" id="education">
+                    <form data-parsley-validate data-parsley-trigger="submit focusin focusout keypress ">
                     <!-- Role -->
-                    <label>  <i class="fas fa-signature"></i> Title
-                        <input id="education_title" type="text" placeholder="Title">
+                    <label>  <i class="fas fa-signature"></i> Degree
+                        <input id="education_degree" type="text" placeholder="Degree" required>
                     </label>
                     <label> <i class=" fa fa-university"></i>  School
-                        <input id="education_school" type="text" placeholder="School Name">
+                        <input id="education_school" type="text" placeholder="School Name" required>
                     </label>
                     <div class="grid-x">
                         <div class="cell small-6">
                             <!-- From -->
                             <label> <i class="far fa-calendar-alt"></i> From
-                                <input id="education_from" type="month" placeholder="From">
+                                <input id="education_from" type="month" placeholder="From" required>
                             </label>
                         </div>
                         <div class="cell small-6">
                             <!-- To -->
                             <label> <i class="far fa-calendar-alt"></i> To
-                                <input id="education_to" type="month" placeholder="To">
+                                <input id="education_to" type="month" placeholder="To" data-parsley-date-gt="#education_from">
                             </label>
                         </div>
                     </div>
@@ -219,6 +220,7 @@
                         <textarea id="education_description" placeholder="Describe Your Education"></textarea>
                     </label>
                     <button id="button-education_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
+                    </form>
                 </div>
                 <!-- skills -->
                 <div class="tabs-panel" id="skills">
