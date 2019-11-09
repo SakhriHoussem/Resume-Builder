@@ -119,37 +119,39 @@
 
                 <!-- experiences -->
                 <div class="tabs-panel is-active" id="experience">
-                    <!-- Role -->
-                    <label> <i class="far fa-user"></i> Role
-                        <input id="experience_role" type="text" placeholder="Your Role" required>
-                    </label>
-                    <label> <i class="far fa-building"></i> Company
-                        <input  id="experience_company" type="text" placeholder="Your Company">
-                    </label>
-                    <div class="grid-x">
-                        <div class="cell small-6">
-                            <!-- From -->
-                            <label> <i class="far fa-calendar-alt"></i> From
-                                <input id="experience_from" type="month" placeholder="From">
-                            </label>
+                    <form data-parsley-validate data-parsley-trigger="submit focusin focusout keypress ">
+                        <!-- Role -->
+                        <label> <i class="far fa-user"></i> Role
+                            <input id="experience_role" type="text" placeholder="Your Role" required>
+                        </label>
+                        <label> <i class="far fa-building"></i> Company
+                            <input  id="experience_company" type="text" placeholder="Your Company" required>
+                        </label>
+                        <div class="grid-x">
+                            <div class="cell small-6">
+                                <!-- From -->
+                                <label> <i class="far fa-calendar-alt"></i> From
+                                    <input id="experience_from" name="experience_from" type="month" placeholder="From" required>
+                                </label>
+                            </div>
+                            <div class="cell small-6">
+                                <!-- To -->
+                                <label> <i class="far fa-calendar-alt"></i> To
+                                    <input id="experience_to" type="month" name="experience_to" placeholder="To" data-parsley-date-gt="#experience_from">
+                                </label>
+                            </div>
                         </div>
-                        <div class="cell small-6">
-                            <!-- To -->
-                            <label> <i class="far fa-calendar-alt"></i> To
-                                <input id="experience_to" type="month" placeholder="To">
-                            </label>
-                        </div>
-                    </div>
-                    <!-- Experience Description -->
-                    <label> <i class="fas fa-tags"></i> Tags
-                        <input type="text" id="experience_tags" name="" placeholder="Your Experience Tags (Tag1, Tag2, ...)">
-                    </label>
+                        <!-- Experience Description -->
+                        <label> <i class="fas fa-tags"></i> Tags
+                            <input type="text" id="experience_tags" name="experience_tags" placeholder="Your Experience Tags (Tag1, Tag2, ...)">
+                        </label>
 
-                    <!-- Experience Tags -->
-                    <label> <i class="fas fa-pencil-alt"></i> Description
-                        <textarea id="experience_description" name="" placeholder="Describe Your Experience"></textarea>
-                    </label>
-                    <button id="button-experience_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
+                        <!-- Experience Tags -->
+                        <label> <i class="fas fa-pencil-alt"></i> Description
+                            <textarea required data-parsley-minwords="20" id="experience_description" name="experience_description" placeholder="Describe Your Experience"></textarea>
+                        </label>
+                        <button id="button-experience_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
+                    </form>
                 </div>
 
                 <!-- projects -->
