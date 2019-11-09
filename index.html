@@ -109,8 +109,8 @@
 
             <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
                 <li class="tabs-title is-active"><a href="#experience" aria-selected="true"><i class="fas fa-briefcase"></i> Experiences</a></li>
-                <li class="tabs-title"><a href="#projects"><i class="fas fa-box-open"></i> Projects</a></li>
-                <li class="tabs-title"><a href="#educations"><i class="fas fa-university"></i> Educations</a></li>
+                <li class="tabs-title"><a href="#project"><i class="fas fa-box-open"></i> Projects</a></li>
+                <li class="tabs-title"><a href="#education"><i class="fas fa-university"></i> Educations</a></li>
                 <li class="tabs-title"><a href="#skills"><i class="fas fa-wrench"></i> Skills</a></li>
                 <li class="tabs-title"><a href="#languages"><i class="fa fa-language"></i> Languages</a></li>
                 <li class="tabs-title"><a href="#interests"><i class="fas fa-plus"></i> Interests</a></li>
@@ -155,42 +155,44 @@
                 </div>
 
                 <!-- projects -->
-                <div class="tabs-panel" id="projects">
-                    <!-- Role -->
-                    <label> <i class="fas fa-signature"></i> Name
-                        <input id="project_name" type="text" placeholder="Your Project Name">
-                    </label>
+                <div class="tabs-panel" id="project">
+                    <form data-parsley-validate data-parsley-trigger="submit focusin focusout keypress ">
+                        <!-- Role -->
+                        <label> <i class="fas fa-signature"></i> Name
+                            <input id="project_name" type="text" placeholder="Your Project Name" required>
+                        </label>
 
-                    <label> <i class="fas fa-link"></i> Link
-                        <input id="project_link" type="url" placeholder="Your Project Link">
-                    </label>
-                    <div class="grid-x">
-                        <div class="cell small-6">
-                            <!-- From -->
-                            <label> <i class="far fa-calendar-alt"></i> From
-                                <input id="project_from" type="month" placeholder="From">
-                            </label>
+                        <label> <i class="fas fa-link"></i> Link
+                            <input id="project_link" type="url" placeholder="Your Project Link">
+                        </label>
+                        <div class="grid-x">
+                            <div class="cell small-6">
+                                <!-- From -->
+                                <label> <i class="far fa-calendar-alt"></i> From
+                                    <input id="project_from" type="month" placeholder="From" required>
+                                </label>
+                            </div>
+                            <div class="cell small-6">
+                                <!-- To -->
+                                <label> <i class="far fa-calendar-alt"></i> To
+                                    <input id="project_to" type="month" data-parsley-date-gt="#project_from" placeholder="To">
+                                </label>
+                            </div>
                         </div>
-                        <div class="cell small-6">
-                            <!-- To -->
-                            <label> <i class="far fa-calendar-alt"></i> To
-                                <input id="project_to" type="month" placeholder="To">
-                            </label>
-                        </div>
-                    </div>
-                    <!-- Projects Description -->
-                    <label> <i class="fas fa-pencil-alt"></i> Description
-                        <textarea name="" id="project_description" placeholder="Describe Your Project"></textarea>
-                    </label>
+                        <!-- Projects Description -->
+                        <label> <i class="fas fa-pencil-alt"></i> Description
+                            <textarea name="" id="project_description" placeholder="Describe Your Project" required data-parsley-minwords="20"></textarea>
+                        </label>
 
-                    <!-- Projects Tags -->
-                    <label> <i class="fas fa-tags"></i> Tags
-                        <input type="text" id="project_tags" name="" placeholder="Your Projects Tags (Tag1, Tag2, ...)">
-                    </label>
-                    <button id="button-project_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
+                        <!-- Projects Tags -->
+                        <label> <i class="fas fa-tags"></i> Tags
+                            <input type="text" id="project_tags" name="" placeholder="Your Projects Tags (Tag1, Tag2, ...)">
+                        </label>
+                        <button id="button-project_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
+                    </form>
                 </div>
                 <!-- educations -->
-                <div class="tabs-panel" id="educations">
+                <div class="tabs-panel" id="education">
                     <!-- Role -->
                     <label>  <i class="fas fa-signature"></i> Title
                         <input id="education_title" type="text" placeholder="Title">
@@ -272,188 +274,188 @@
                         </button>
                     </form>
                 </div>
-                </div>
             </div>
+        </div>
 
-            <!-- cv paper -->
-            <div class="bg--light-gray cell small-8">
-                <div class="paper cv">
-                    <!-- sidebar of cv -->
-                    <div class="cv__sidebar">
-                        <img class="thumbnail sidebar__img" src="https://avatars1.githubusercontent.com/u/16634831?s=460&v=4"
-                             alt="profile.">
-                        <h1 id="cv__name" class="cv__title sidebar__name">Sakhri Houssem Eddine</h1>
-                        <h2 id="cv__job" class="cv__title sidebar__job">Full Stack Developer</h2>
-                        <hr>
-                        <dl class="sidebar__info">
-                            <dd><i class="fas fa-at"></i> <span id="cv__email">s.houssem.e@gmail.com</span></dd>
-                            <dd><i class="fas fa-phone"></i> <span id="cv__phone">00213777850224</span></dd>
-                            <dd id="cv__web-sites">
-                                <i class="fas fa-globe-europe"></i> <a href="http://sakhrihoussem.me">sakhrihoussem.me</a>
-                            </dd>
-                            <dd id="cv__social-media">
-                                <div><i class="fab fa-github"></i> SakhriHoussem</div>
-                                <div><i class="fab fa-twitter"></i> @SakhriHoussem</div>
-                                <div><i class="fab fa-linkedin-in"></i> SakhriHoussem</div>
-                            </dd>
+        <!-- cv paper -->
+        <div class="bg--light-gray cell small-8">
+            <div class="paper cv">
+                <!-- sidebar of cv -->
+                <div class="cv__sidebar">
+                    <img class="thumbnail sidebar__img" src="https://avatars1.githubusercontent.com/u/16634831?s=460&v=4"
+                         alt="profile.">
+                    <h1 id="cv__name" class="cv__title sidebar__name">Sakhri Houssem Eddine</h1>
+                    <h2 id="cv__job" class="cv__title sidebar__job">Full Stack Developer</h2>
+                    <hr>
+                    <dl class="sidebar__info">
+                        <dd><i class="fas fa-at"></i> <span id="cv__email">s.houssem.e@gmail.com</span></dd>
+                        <dd><i class="fas fa-phone"></i> <span id="cv__phone">00213777850224</span></dd>
+                        <dd id="cv__web-sites">
+                            <i class="fas fa-globe-europe"></i> <a href="http://sakhrihoussem.me">sakhrihoussem.me</a>
+                        </dd>
+                        <dd id="cv__social-media">
+                            <div><i class="fab fa-github"></i> SakhriHoussem</div>
+                            <div><i class="fab fa-twitter"></i> @SakhriHoussem</div>
+                            <div><i class="fab fa-linkedin-in"></i> SakhriHoussem</div>
+                        </dd>
 
-                            <!-- skills -->
-                            <dt class="sidebar__title clearfix"><i class="fas fa-wrench"></i> Skills</dt>
-                            <dd id="cv__skills">
-                                <div>
-                                    <span>CSS & SASS</span>
-                                    <progress class="secondary float-right" max="100" value="90"></progress>
-                                </div>
-                                <div>
-                                    <span>Bootstrap</span>
-                                    <progress class="secondary float-right" max="100" value="85"></progress>
-                                </div>
-                                <div>
-                                    <span>Foundation</span>
-                                    <progress class="secondary float-right" max="100" value="85"></progress>
-                                </div>
-                                <div>
-                                    <span>PHP</span>
-                                    <progress class="secondary float-right" max="100" value="80"></progress>
-                                </div>
-                                <div>
-                                    <span>Symfony</span>
-                                    <progress class="secondary float-right" max="100" value="80"></progress>
-                                </div>
-                                <div>
-                                    <span>Python</span>
-                                    <progress class="secondary float-right" max="100" value="80"></progress>
-                                </div>
-                            </dd>
+                        <!-- skills -->
+                        <dt class="sidebar__title clearfix"><i class="fas fa-wrench"></i> Skills</dt>
+                        <dd id="cv__skills">
+                            <div>
+                                <span>CSS & SASS</span>
+                                <progress class="secondary float-right" max="100" value="90"></progress>
+                            </div>
+                            <div>
+                                <span>Bootstrap</span>
+                                <progress class="secondary float-right" max="100" value="85"></progress>
+                            </div>
+                            <div>
+                                <span>Foundation</span>
+                                <progress class="secondary float-right" max="100" value="85"></progress>
+                            </div>
+                            <div>
+                                <span>PHP</span>
+                                <progress class="secondary float-right" max="100" value="80"></progress>
+                            </div>
+                            <div>
+                                <span>Symfony</span>
+                                <progress class="secondary float-right" max="100" value="80"></progress>
+                            </div>
+                            <div>
+                                <span>Python</span>
+                                <progress class="secondary float-right" max="100" value="80"></progress>
+                            </div>
+                        </dd>
 
-                            <!-- languages -->
-                            <dt class="sidebar__title"><i class="fas fa-language"></i> Languages</dt>
-                            <dd id="cv__languages">
-                                <div>English</div>
-                                <div>French</div>
-                                <div>Arabic</div>
-                            </dd>
+                        <!-- languages -->
+                        <dt class="sidebar__title"><i class="fas fa-language"></i> Languages</dt>
+                        <dd id="cv__languages">
+                            <div>English</div>
+                            <div>French</div>
+                            <div>Arabic</div>
+                        </dd>
 
-                            <!-- interests -->
-                            <dt class="sidebar__title"><i class="fas fa-plus"></i> Interests</dt>
-                            <dd id="cv__interests">
-                                <div>Film & Series</div>
-                                <div>Drawing</div>
-                                <div>Cocking</div>
-                            </dd>
-                        </dl>
+                        <!-- interests -->
+                        <dt class="sidebar__title"><i class="fas fa-plus"></i> Interests</dt>
+                        <dd id="cv__interests">
+                            <div>Film & Series</div>
+                            <div>Drawing</div>
+                            <div>Cocking</div>
+                        </dd>
+                    </dl>
+                </div>
+
+                <!-- main of cv -->
+                <div class="cv__main">
+
+                    <!-- Resume -->
+                    <h1 class="main__title"><i class="fas fa-pencil-alt"></i> Resume</h1>
+                    <div id="cv__resume">
+
+                        <p>Versatile, motivated and passionate web developer of new technologies.</p>
+                        <p>Having gained experience with multiple technologies and completing several development
+                            projects, whether in business or freelance.</p>
+                        <p>Are actively seeking a Web Developer position within a dynamic team and with technical and
+                            professional development opportunities.</p>
+
                     </div>
 
-                    <!-- main of cv -->
-                    <div class="cv__main">
+                    <!-- Experiences -->
+                    <div id="cv__experiences">
+                        <h1 class="main__title"><i class="fas fa-briefcase"></i> Experiences</h1>
 
-                        <!-- Resume -->
-                        <h1 class="main__title"><i class="fas fa-pencil-alt"></i> Resume</h1>
-                        <div id="cv__resume">
-
-                            <p>Versatile, motivated and passionate web developer of new technologies.</p>
-                            <p>Having gained experience with multiple technologies and completing several development
-                                projects, whether in business or freelance.</p>
-                            <p>Are actively seeking a Web Developer position within a dynamic team and with technical and
-                                professional development opportunities.</p>
-
-                        </div>
-
-                        <!-- Experiences -->
-                        <div id="cv__experiences">
-                            <h1 class="main__title"><i class="fas fa-briefcase"></i> Experiences</h1>
-
-                            <div class="cv__experience">
-                                <h2>Full Stack Developer
-                                    <small> November – December 2018</small>
-                                </h2>
-                                <h3>AhSB-Communication</h3>
-                                <p>It was my responsibility to :</p>
-                                <ul>
-                                    <li>Perform unit tests under the supervision of the IANDI team on their Platform 1SPECT
-                                        using PHP Unit .
-                                    </li>
-                                    <li>Develop websites using Ez-platform technology.</li>
-                                    <li>Using the YouTrack Task Management Tool.</li>
-                                    <li>Using Sourcetree for Git</li>
-                                </ul>
-                                <div class="tags">
-                                    <span class="label">PHP7.3</span>
-                                    <span class="label">Symfony</span>
-                                    <span class="label">Ez-Platform</span>
-                                    <span class="label">CSS3</span>
-                                    <span class="label">SASS</span>
-                                    <span class="label">Git</span>
-                                    <span class="label">YouTrack</span>
-                                    <span class="label">SourceTree</span>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Projects -->
-                        <div id="cv__projects">
-                            <h1 class="main__title"><i class="fas fa-box-open"></i> Projects</h1>
-
-                            <div class="cv__project">
-                                <h2>Image Classification
-                                    <small>January - May 2018 (Master PFE)</small>
-                                </h2>
-                                <p>Development of a Desktop Application for Image Classification Using Python and the
-                                    TensorFlow Library for Machine Learning.</p>
-                                <div class="tags">
-                                    <span class="label">Python</span>
-                                    <span class="label">TensorFlow</span>
-                                </div>
-                            </div>
-
-                            <div class="cv__project">
-                                <h2>SEOR Web application
-                                    <small>January - May 2016 (License PFE)</small>
-                                </h2>
-                                <p>Development of a WEB application for the management of equipme for tntshe HSE department
-                                    of the company SEOR using PHP 5.4 and pure CSS3 for a responsive interface.</p>
-                                <div class="tags">
-                                    <span class="label">PHP5.4</span>
-                                    <span class="label">CSS3</span>
-                                </div>
+                        <div class="cv__experience">
+                            <h2>Full Stack Developer
+                                <small> November – December 2018</small>
+                            </h2>
+                            <h3>AhSB-Communication</h3>
+                            <p>It was my responsibility to :</p>
+                            <ul>
+                                <li>Perform unit tests under the supervision of the IANDI team on their Platform 1SPECT
+                                    using PHP Unit .
+                                </li>
+                                <li>Develop websites using Ez-platform technology.</li>
+                                <li>Using the YouTrack Task Management Tool.</li>
+                                <li>Using Sourcetree for Git</li>
+                            </ul>
+                            <div class="tags">
+                                <span class="label">PHP7.3</span>
+                                <span class="label">Symfony</span>
+                                <span class="label">Ez-Platform</span>
+                                <span class="label">CSS3</span>
+                                <span class="label">SASS</span>
+                                <span class="label">Git</span>
+                                <span class="label">YouTrack</span>
+                                <span class="label">SourceTree</span>
                             </div>
                         </div>
 
-                        <!-- Educations -->
-                        <div id="cv__educations">
-                            <h1 class="main__title"><i class=" fa fa-university"></i> Educations</h1>
+                    </div>
 
-                            <div class="cv__education">
-                                <h2>Master Degree in Computer Science
-                                    <small>Sept 2013 - Mai 2018</small>
-                                </h2>
-                                <h3>University of Science and Technologie Mohamed Boudiaf,Oran Algeria</h3>
-                                <p></p>
+                    <!-- Projects -->
+                    <div id="cv__projects">
+                        <h1 class="main__title"><i class="fas fa-box-open"></i> Projects</h1>
+
+                        <div class="cv__project">
+                            <h2>Image Classification
+                                <small>January - May 2018 (Master PFE)</small>
+                            </h2>
+                            <p>Development of a Desktop Application for Image Classification Using Python and the
+                                TensorFlow Library for Machine Learning.</p>
+                            <div class="tags">
+                                <span class="label">Python</span>
+                                <span class="label">TensorFlow</span>
                             </div>
-
                         </div>
+
+                        <div class="cv__project">
+                            <h2>SEOR Web application
+                                <small>January - May 2016 (License PFE)</small>
+                            </h2>
+                            <p>Development of a WEB application for the management of equipme for tntshe HSE department
+                                of the company SEOR using PHP 5.4 and pure CSS3 for a responsive interface.</p>
+                            <div class="tags">
+                                <span class="label">PHP5.4</span>
+                                <span class="label">CSS3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Educations -->
+                    <div id="cv__educations">
+                        <h1 class="main__title"><i class=" fa fa-university"></i> Educations</h1>
+
+                        <div class="cv__education">
+                            <h2>Master Degree in Computer Science
+                                <small>Sept 2013 - Mai 2018</small>
+                            </h2>
+                            <h3>University of Science and Technologie Mohamed Boudiaf,Oran Algeria</h3>
+                            <p></p>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- main app scripts -->
-    <script src="js/vendor/jquery/jquery.js"></script>
-    <!-- foundation scripts -->
-    <script src="js/vendor/foundation/what-input.js"></script>
-    <script src="js/vendor/foundation/foundation.min.js"></script>
-    <!-- parsley scripts -->
-    <script src="js/vendor/parsley/parsley.min.js"></script>
-    <!-- parsley extra scripts -->
-    <!--<script src="js/vendor/parsley/extra/plugin/bind.js"></script>-->
-    <!--<script src="js/vendor/parsley/extra/validator/comparison.js"></script>-->
-    <script src="js/vendor/parsley/extra/validator/dateiso.js"></script>
-    <script src="js/vendor/parsley/extra/validator/words.js"></script>
-    <script src="js/vendor/parsley/extra/validator/luhn.js"></script>
-    <script src="js/vendor/parsley/extra/validator/notequalto.js"></script>
-    <script src="js/vendor/parsley/extra/validator/datecomparison.js"></script>
-    <!-- main app scripts -->
-    <script src="js/main.js"></script>
+</div>
+<!-- main app scripts -->
+<script src="js/vendor/jquery/jquery.js"></script>
+<!-- foundation scripts -->
+<script src="js/vendor/foundation/what-input.js"></script>
+<script src="js/vendor/foundation/foundation.min.js"></script>
+<!-- parsley scripts -->
+<script src="js/vendor/parsley/parsley.min.js"></script>
+<!-- parsley extra scripts -->
+<!--<script src="js/vendor/parsley/extra/plugin/bind.js"></script>-->
+<!--<script src="js/vendor/parsley/extra/validator/comparison.js"></script>-->
+<script src="js/vendor/parsley/extra/validator/dateiso.js"></script>
+<script src="js/vendor/parsley/extra/validator/words.js"></script>
+<script src="js/vendor/parsley/extra/validator/luhn.js"></script>
+<script src="js/vendor/parsley/extra/validator/notequalto.js"></script>
+<script src="js/vendor/parsley/extra/validator/datecomparison.js"></script>
+<!-- main app scripts -->
+<script src="js/main.js"></script>
 </body>
 </html>

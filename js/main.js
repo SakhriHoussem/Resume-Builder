@@ -228,47 +228,53 @@ $( document ).ready(function() {
 
         button.addEventListener("click", ($event) => {
             $event.preventDefault();
+            if ( $("#" + blockID + " form").parsley().isValid()) {
 
-            // create <h2> ... </h2>
-            let h2Tag = document.createElement("h2");
-            h2Tag.textContent = nameInput.value;
+                // create <h2> ... </h2>
+                let h2Tag = document.createElement("h2");
+                h2Tag.textContent = nameInput.value;
 
-            // create <small> ... </small>
-            let smallTag = document.createElement("small");
-            smallTag.textContent = fromInput.value + " - "  + toInput.value;
-            h2Tag.appendChild(smallTag); // <h2> ... <small> ... </small> </h2>
+                // create <small> ... </small>
+                let smallTag = document.createElement("small");
+                smallTag.textContent = fromInput.value + " - " + toInput.value;
+                h2Tag.appendChild(smallTag); // <h2> ... <small> ... </small> </h2>
 
-            // create <h3> ... </h3>
-            let h3Tag = document.createElement("h3");
-            h3Tag.textContent = linkInput.value;
+                // create <h3> ... </h3>
+                let h3Tag = document.createElement("h3");
+                h3Tag.textContent = linkInput.value;
 
-            // create <p> ... </p>
-            let pTags = document.createElement("p");
-            pTags.textContent = descriptionInput.value;
+                // create <p> ... </p>
+                let pTags = document.createElement("p");
+                pTags.textContent = descriptionInput.value;
 
-            // create <div class="tags"> ... </div>
-            let tagsBlock = document.createElement("div");
-            tagsBlock.classList.add("tags");
-            let tags  = tagsInput.value.split(",");
-            for (let i=0; i<tags.length; i++) {
-                // <span class="label">tag[i]</span>
-                let spanTag = document.createElement("span");
-                spanTag.classList.add("label");
-                spanTag.textContent = tags[i];
-                tagsBlock.appendChild(spanTag);
+                // create <div class="tags"> ... </div>
+                let tagsBlock = document.createElement("div");
+                tagsBlock.classList.add("tags");
+                let tags = tagsInput.value.split(",");
+                for (let i = 0; i < tags.length; i++) {
+                    // <span class="label">tag[i]</span>
+                    let spanTag = document.createElement("span");
+                    spanTag.classList.add("label");
+                    if (tags[i]) {
+                        spanTag.textContent = tags[i];
+                        tagsBlock.appendChild(spanTag);
+                    }
+                }
+
+                // create <div class="cv__..." > ... </div>
+                let divTag = document.createElement("div");
+                divTag.classList.add("cv__" + blockID);
+                divTag.appendChild(h2Tag);
+                divTag.appendChild(h3Tag);
+                divTag.appendChild(pTags);
+                divTag.appendChild(tagsBlock);
+
+                // get the element to write inside
+                let to = document.getElementById('cv__' + blockID + "s");
+                to.appendChild(divTag);
+            } else {
+                $("#" + blockID + " form").parsley().validate();
             }
-
-            // create <div class="cv__..." > ... </div>
-            let divTag = document.createElement("div");
-            divTag.classList.add("cv__" + blockID);
-            divTag.appendChild(h2Tag);
-            divTag.appendChild(h3Tag);
-            divTag.appendChild(pTags);
-            divTag.appendChild(tagsBlock);
-
-            // get the element to write inside
-            let to = document.getElementById('cv__' + blockID + "s");
-            to.appendChild(divTag);
         });
     }
 
