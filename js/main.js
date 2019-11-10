@@ -5,6 +5,11 @@ $( document ).ready(function() {
 // get elements ------------------------------
 
 // functions ----------------------------------
+
+    $(".icon i[class='fas fa-minus-circle']").click(function() {
+        $(this).closest("div").remove();
+    });
+
     function addInfo(inputName) {
         $('#input-' + inputName).parsley().on('field:success', function() {
             // In here, `this` is the parlsey instance of #some-input

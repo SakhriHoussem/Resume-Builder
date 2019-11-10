@@ -194,32 +194,32 @@
                 <!-- educations -->
                 <div class="tabs-panel" id="education">
                     <form data-parsley-validate data-parsley-trigger="submit focusin focusout keypress ">
-                    <!-- Role -->
-                    <label>  <i class="fas fa-signature"></i> Degree
-                        <input id="education_degree" type="text" placeholder="Degree" required>
-                    </label>
-                    <label> <i class=" fa fa-university"></i>  School
-                        <input id="education_school" type="text" placeholder="School Name" required>
-                    </label>
-                    <div class="grid-x">
-                        <div class="cell small-6">
-                            <!-- From -->
-                            <label> <i class="far fa-calendar-alt"></i> From
-                                <input id="education_from" type="month" placeholder="From" required>
-                            </label>
+                        <!-- Role -->
+                        <label>  <i class="fas fa-signature"></i> Degree
+                            <input id="education_degree" type="text" placeholder="Degree" required>
+                        </label>
+                        <label> <i class=" fa fa-university"></i>  School
+                            <input id="education_school" type="text" placeholder="School Name" required>
+                        </label>
+                        <div class="grid-x">
+                            <div class="cell small-6">
+                                <!-- From -->
+                                <label> <i class="far fa-calendar-alt"></i> From
+                                    <input id="education_from" type="month" placeholder="From" required>
+                                </label>
+                            </div>
+                            <div class="cell small-6">
+                                <!-- To -->
+                                <label> <i class="far fa-calendar-alt"></i> To
+                                    <input id="education_to" type="month" placeholder="To" data-parsley-date-gt="#education_from">
+                                </label>
+                            </div>
                         </div>
-                        <div class="cell small-6">
-                            <!-- To -->
-                            <label> <i class="far fa-calendar-alt"></i> To
-                                <input id="education_to" type="month" placeholder="To" data-parsley-date-gt="#education_from">
-                            </label>
-                        </div>
-                    </div>
-                    <!-- Education Description -->
-                    <label> <i class="fas fa-pencil-alt"></i> Description
-                        <textarea id="education_description" placeholder="Describe Your Education"></textarea>
-                    </label>
-                    <button id="button-education_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
+                        <!-- Education Description -->
+                        <label> <i class="fas fa-pencil-alt"></i> Description
+                            <textarea id="education_description" placeholder="Describe Your Education"></textarea>
+                        </label>
+                        <button id="button-education_add" class="button expanded" type="submit"><i class="fas fa-plus-square"></i></button>
                     </form>
                 </div>
                 <!-- skills -->
@@ -290,10 +290,20 @@
                     <h2 id="cv__job" class="cv__title sidebar__job">Full Stack Developer</h2>
                     <hr>
                     <dl class="sidebar__info">
-                        <dd><i class="fas fa-at"></i> <span id="cv__email">s.houssem.e@gmail.com</span> <button class="icon"><i class="fas fa-minus-circle"></i></button></dd>
-                        <dd><i class="fas fa-phone"></i> <span id="cv__phone">00213777850224 <button class="icon"><i class="fas fa-minus-circle"></i></button></span></dd>
-                        <dd id="cv__web-sites">
-                            <i class="fas fa-globe-europe"></i> <a href="http://sakhrihoussem.me">sakhrihoussem.me <button class="icon"><i class="fas fa-minus-circle"></i></button></a>
+                        <dd>
+                            <div>
+                                <i class="fas fa-at"></i> <span id="cv__email">s.houssem.e@gmail.com</span> <button class="icon"><i class="fas fa-minus-circle"></i></button>
+                            </div>
+                        </dd>
+                        <dd>
+                            <div>
+                                <i class="fas fa-phone"></i> <span id="cv__phone">00213777850224 <button class="icon"><i class="fas fa-minus-circle"></i></button></span>
+                            </div>
+                        </dd>
+                        <dd>
+                            <div id="cv__web-sites">
+                                <i class="fas fa-globe-europe"></i> <a href="http://sakhrihoussem.me">sakhrihoussem.me </a> <button class="icon"><i class="fas fa-minus-circle"></i></button>
+                            </div>
                         </dd>
                         <dd id="cv__social-media">
                             <div><i class="fab fa-github"></i> SakhriHoussem <button class="icon"><i class="fas fa-minus-circle"></i></button></div>
