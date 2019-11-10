@@ -208,3 +208,27 @@ label {
 .text-danger {
   color: $danger-color;
 }
+
+// ----------------------------------------------------
+// Buttons
+// ----------------------------------------------------
+
+.icon {
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0;
+
+  i {
+    color: $danger-color;
+    background-color: $paper-bg-color;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 !important;
+    font-size: .9rem;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}

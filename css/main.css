@@ -95,4 +95,19 @@ label {
 .text-danger {
   color: #cc4b37; }
 
+.icon {
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0; }
+  .icon i {
+    color: #cc4b37;
+    background-color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 !important;
+    font-size: .9rem;
+    border-radius: 50%; }
+  .icon:hover {
+    opacity: 1; }
+
 /*# sourceMappingURL=main.css.map */
