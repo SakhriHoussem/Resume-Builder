@@ -4,17 +4,36 @@ $( document ).ready(function() {
 
 // get elements ------------------------------
 
-// functions ----------------------------------
+// Events ------------------------------
 
-    $(".icon i[class='fas fa-minus-circle']").click(function() {
+    $(document).on('click',".icon i[class='fas fa-minus-circle']", function(){
         $(this).closest("div").remove();
     });
 
-    function addInfo(inputName) {
+
+// functions ----------------------------------
+    function generatedDelBtn() {
+
+        // <button class="icon"><i class="fas fa-minus-circle"></i></button>
+        let i = document.createElement("i");
+        let button = document.createElement("button");
+        button.append(i);
+
+        button.classList.add("icon");
+        i.classList.add("fas");
+        i.classList.add("fa-minus-circle");
+
+        return button
+    }
+
+    function addInfo(inputName,deleted = false) {
         $('#input-' + inputName).parsley().on('field:success', function() {
             // In here, `this` is the parlsey instance of #some-input
             let to = document.getElementById('cv__' + inputName);
             to.textContent = this.value;
+            if (deleted) {
+                to.appendChild(generatedDelBtn());
+            }
         });
     }
 
@@ -44,9 +63,10 @@ $( document ).ready(function() {
                 linkTag.title = input.value;
                 linkTag.href = input.value;
                 let to = document.getElementById('cv__' + inputName);
+                to.appendChild(divTag);
                 divTag.appendChild(iTag);
                 divTag.appendChild(linkTag);
-                to.appendChild(divTag);
+                divTag.appendChild(generatedDelBtn());
             }
         });
     }
@@ -80,6 +100,7 @@ $( document ).ready(function() {
                 let to = document.getElementById('cv__' + inputName);
                 divTag.appendChild(iTag);
                 divTag.appendChild(linkTag);
+                divTag.appendChild(generatedDelBtn());
                 to.appendChild(divTag);
             }
         });
@@ -111,6 +132,7 @@ $( document ).ready(function() {
                 // get the element to write inside
                 let to = document.getElementById('cv__' + inputName + "s");
                 divTag.appendChild(spanTag);
+                divTag.appendChild(generatedDelBtn());
                 divTag.appendChild(progressTag);
                 to.appendChild(divTag);
             }
@@ -138,6 +160,7 @@ $( document ).ready(function() {
                 // get the element to write inside
                 let to = document.getElementById('cv__' + inputName + "s");
                 divTag.appendChild(smallTag);
+                divTag.appendChild(generatedDelBtn());
                 to.appendChild(divTag);
             }
         });
@@ -154,6 +177,7 @@ $( document ).ready(function() {
                 // create <div> ... </div>
                 let divTag = document.createElement("div");
                 divTag.textContent = input.value;
+                divTag.appendChild(generatedDelBtn());
 
                 // get the element to write inside
                 let to = document.getElementById('cv__' + inputName + "s");
@@ -182,6 +206,7 @@ $( document ).ready(function() {
                 // create <small> ... </small>
                 let smallTag = document.createElement("small");
                 smallTag.textContent = fromInput.value + " - "  + (toInput.value ===! "" ? toInput.value : "Current");
+                h2Tag.appendChild(generatedDelBtn());
                 h2Tag.appendChild(smallTag); // <h2> ... <small> ... </small> </h2>
 
                 // create <h3> Company Name</h3>
@@ -212,6 +237,8 @@ $( document ).ready(function() {
                 divTag.appendChild(h3Tag);
                 divTag.appendChild(pTags);
                 divTag.appendChild(tagsBlock);
+                divTag.appendChild(generatedDelBtn());
+
                 // get the element to write inside
                 let to = document.getElementById('cv__' + blockID + "s");
                 to.appendChild(divTag);
@@ -238,6 +265,7 @@ $( document ).ready(function() {
                 // create <h2> ... </h2>
                 let h2Tag = document.createElement("h2");
                 h2Tag.textContent = nameInput.value;
+                h2Tag.appendChild(generatedDelBtn());
 
                 // create <small> ... </small>
                 let smallTag = document.createElement("small");
@@ -273,6 +301,7 @@ $( document ).ready(function() {
                 divTag.appendChild(h3Tag);
                 divTag.appendChild(pTags);
                 divTag.appendChild(tagsBlock);
+                divTag.appendChild(generatedDelBtn());
 
                 // get the element to write inside
                 let to = document.getElementById('cv__' + blockID + "s");
@@ -298,6 +327,7 @@ $( document ).ready(function() {
                 // create <h2> ... </h2>
                 let h2Tag = document.createElement("h2");
                 h2Tag.textContent = degreeInput.value;
+                h2Tag.appendChild(generatedDelBtn());
 
                 // create <small> ... </small>
                 let smallTag = document.createElement("small");
@@ -319,6 +349,7 @@ $( document ).ready(function() {
                 divTag.appendChild(h2Tag);
                 divTag.appendChild(h3Tag);
                 divTag.appendChild(pTags);
+                divTag.appendChild(generatedDelBtn());
 
                 // get the element to write inside
                 let to = document.getElementById('cv__' + blockID + "s");
@@ -345,8 +376,8 @@ $( document ).ready(function() {
 // events ----------------------------------
     addInfo("name");
     addInfo("job");
-    addInfo("phone");
-    addInfo("email");
+    addInfo("phone", true);
+    addInfo("email", true);
     addInfo("resume");
     addWebSite("web-sites");
     addSocialMedia("social-media");
