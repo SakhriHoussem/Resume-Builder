@@ -25,8 +25,7 @@
     .cv__main h2 {
       position: relative;
       font-size: 1.1rem;
-      margin-bottom: 0;
-      margin-top: 10px; }
+      margin-bottom: 0; }
       .cv__main h2 small {
         color: #888d95;
         font-size: 1rem;
@@ -68,7 +67,6 @@
   margin-right: auto;
   margin-left: auto; }
 .sidebar__info dd {
-  margin: 5px;
   font-size: 0.8rem;
   clear: both; }
   .sidebar__info dd i {
@@ -79,9 +77,19 @@
       text-decoration: underline; }
 
 .main__title {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   text-transform: uppercase;
   font-weight: 600; }
+
+.cv__main .cv__info {
+  background-color: rgba(0, 0, 0, 0.05);
+  margin-top: 5px; }
+
+.cv__info {
+  padding: 5px;
+  border-radius: 5px; }
+  .cv__info:hover {
+    background-color: rgba(0, 0, 0, 0.1); }
 
 .tabs li a {
   font-size: 1.1rem; }
@@ -95,19 +103,31 @@ label {
 .text-danger {
   color: #cc4b37; }
 
+.btn-block {
+  display: inline-block;
+  opacity: 0; }
+  .cv__sidebar .btn-block {
+    float: right; }
+  #cv__skills .btn-block {
+    float: none; }
+
 .icon {
   margin: 0 !important;
-  padding: 0 !important;
-  opacity: 0; }
+  margin-right: 5px !important;
+  padding: 0 !important; }
+  .icon:first-child {
+    color: #37cc56; }
+  .icon:nth-child(2) {
+    color: #cc4b37; }
   .icon i {
-    color: #cc4b37;
-    background-color: #fff;
+    line-height: 1;
+    border-radius: 10%;
     display: inline-block;
     vertical-align: middle;
     margin: 0 !important;
-    font-size: .9rem;
-    border-radius: 50%; }
-  .icon:hover {
-    opacity: 1; }
+    font-size: 1rem; }
+    .icon i:hover {
+      font-size: 1.1rem;
+      color: rgba(0, 0, 0, 0.2); }
 
 /*# sourceMappingURL=main.css.map */

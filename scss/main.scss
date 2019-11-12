@@ -22,6 +22,7 @@ $paper-title-color: $sidebar-bg-color;
 $text-color: #26282b;
 $time-color: lighten($text-color, 40);
 $danger-color: #cc4b37;;
+$success-color: #37cc56;;
 
 // ----------------------------------------------------
 // Padding
@@ -35,7 +36,7 @@ $sidebar-padding: 1rem;
 // ----------------------------------------------------
 
 $default-margin: 5px;
-$paper-title-margin-top: 1rem;
+$paper-title-margin-top: .5rem;
 
 // ----------------------------------------------------
 // Backgrounds
@@ -81,7 +82,6 @@ $paper-title-margin-top: 1rem;
       position: relative;
       font-size: $title-2-size;
       margin-bottom: 0;
-      margin-top: $default-margin *2;
 
       small {
         color: $time-color;
@@ -148,7 +148,6 @@ $paper-title-margin-top: 1rem;
 
   &__info {
     dd {
-      margin: 5px;
       font-size: $text-size;
       clear: both;
 
@@ -175,6 +174,20 @@ $paper-title-margin-top: 1rem;
   }
 }
 
+.cv__main {
+  .cv__info{
+    background-color: rgba(0, 0, 0, 0.05);
+    margin-top: $default-margin;
+  }
+}
+
+.cv__info{
+  padding: $default-margin;
+  border-radius: $default-margin;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
 // ----------------------------------------------------
 // Form
 // ----------------------------------------------------
@@ -212,23 +225,44 @@ label {
 // ----------------------------------------------------
 // Buttons
 // ----------------------------------------------------
+.btn-block {
+  display: inline-block;
+  opacity: 0;
+
+  .cv__sidebar & {
+    float: right;
+  }
+
+  #cv__skills & {
+    float: none;
+  }
+}
 
 .icon {
   margin: 0 !important;
+  margin-right: 5px !important;
   padding: 0 !important;
-  opacity: 0;
+
+  &:first-child {
+    color: $success-color;
+  }
+
+  &:nth-child(2) {
+    color: $danger-color;
+  }
 
   i {
-    color: $danger-color;
-    background-color: $paper-bg-color;
+    line-height: 1;
+    border-radius: 10%;
     display: inline-block;
     vertical-align: middle;
     margin: 0 !important;
-    font-size: .9rem;
-    border-radius: 50%;
-  }
+    font-size: 1rem;
+    &:hover{
+      font-size: 1.1rem;
+      color: rgba(0, 0, 0, 0.2);
+    }
 
-  &:hover {
-    opacity: 1;
+
   }
 }

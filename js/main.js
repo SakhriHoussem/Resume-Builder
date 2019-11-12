@@ -6,22 +6,44 @@ $( document ).ready(function() {
 
 // Events ------------------------------
 
-    $(document).on('click',".icon i[class='fas fa-minus-circle']", function(){
-        $(this).closest("div").remove();
+    $(document).on('click',".icon i[class='fas fa-trash']", function(){
+        $(this).closest(".cv__info").remove();
+    });
+
+    $(document).on('mouseenter','.cv__info:has(.btn-block)', function(){
+        $(this).find(".btn-block").css('opacity',1);
+    });
+
+    $(document).on('mouseleave','.cv__info:has(.btn-block)', function(){
+            $(this).find(".btn-block").css('opacity',0);
     });
 
 
 // functions ----------------------------------
     function generatedDelBtn() {
 
-        // <button class="icon"><i class="fas fa-minus-circle"></i></button>
+        // <button class="icon"><i class="fas fa-trash"></i></button>
         let i = document.createElement("i");
         let button = document.createElement("button");
         button.append(i);
 
         button.classList.add("icon");
         i.classList.add("fas");
-        i.classList.add("fa-minus-circle");
+        i.classList.add("fa-fa-trash");
+
+        return button
+    }
+
+    function generatedEditBtn() {
+
+        // <button class="icon"><i class="fas fa-paint-brush"></i></button>
+        let i = document.createElement("i");
+        let button = document.createElement("button");
+        button.append(i);
+
+        button.classList.add("icon");
+        i.classList.add("fas");
+        i.classList.add("fa-paint-brush");
 
         return button
     }
