@@ -71,7 +71,7 @@ $( document ).ready(function() {
                 ddTag.classList.add('cv__info');
                 let iTag = document.createElement("i");
                 iTag.classList.add("fas");
-                
+
                 if (inputName === "email") {
                     iTag.classList.add("fa-at");
                 } else if (inputName === "phone") {
@@ -171,7 +171,7 @@ $( document ).ready(function() {
             if ( $('#input-' + inputName).parsley().isValid() && $('#select-' + inputName + "_level").parsley().isValid() && input.value !== "") {
 
                 let divTag = document.createElement("div");
-
+                divTag.classList.add("cv__info");
                 // create <progress class="secondary float-right" max="100" value="85"></progress>
                 let progressTag = document.createElement("progress");
                 progressTag.classList.add("secondary");
@@ -209,6 +209,7 @@ $( document ).ready(function() {
 
                 // create <div> ... </div>
                 let divTag = document.createElement("div");
+                divTag.classList.add("cv__info");
                 divTag.textContent = input.value;
 
                 // get the element to write inside
@@ -230,6 +231,8 @@ $( document ).ready(function() {
             if ( $('#input-' + inputName).parsley().isValid() && input.value !== "") {
                 // create <div> ... </div>
                 let divTag = document.createElement("div");
+                divTag.classList.add("cv__info");
+
                 divTag.textContent = input.value;
                 divTag.appendChild(generateBtnBlock());
 
