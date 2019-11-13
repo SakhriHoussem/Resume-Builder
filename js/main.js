@@ -59,11 +59,34 @@ $( document ).ready(function() {
         return divTag
     }
 
-        function addInfo(inputName,deleted = false) {
+        function addInfo(inputName) {
         $('#input-' + inputName).parsley().on('field:success', function() {
             // In here, `this` is the parlsey instance of #some-input
             let to = document.getElementById('cv__' + inputName);
-            to.textContent = this.value;
+            if (to) {
+                to.textContent = this.value;
+            } else {
+                // append first element
+                let ddTag = document.createElement("dd");
+                ddTag.classList.add('cv__info');
+                let iTag = document.createElement("i");
+                iTag.classList.add("fas");
+                
+                if (inputName === "email") {
+                    iTag.classList.add("fa-at");
+                } else if (inputName === "phone") {
+                    iTag.classList.add("fa-phone");
+                }
+
+                let spanTag = document.createElement("span");
+                spanTag.textContent = this.value;
+
+                ddTag.append(iTag);
+                ddTag.append(spanTag);
+                ddTag.append(generateBtnBlock());
+                $(".sidebar__info").prepend(ddTag);
+
+            }
         });
     }
 
@@ -407,8 +430,8 @@ $( document ).ready(function() {
 // events ----------------------------------
     addInfo("name");
     addInfo("job");
-    addInfo("phone", true);
-    addInfo("email", true);
+    addInfo("phone");
+    addInfo("email");
     addInfo("resume");
     addWebSite("web-sites");
     addSocialMedia("social-media");
