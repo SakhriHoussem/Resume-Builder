@@ -20,7 +20,7 @@ $( document ).ready(function() {
 
 
 // functions ----------------------------------
-    function generatedDelBtn() {
+    function generateDelBtn() {
 
         // <button class="icon"><i class="fas fa-trash"></i></button>
         let i = document.createElement("i");
@@ -29,12 +29,12 @@ $( document ).ready(function() {
 
         button.classList.add("icon");
         i.classList.add("fas");
-        i.classList.add("fa-fa-trash");
+        i.classList.add("fa-trash");
 
         return button
     }
 
-    function generatedEditBtn() {
+    function generateEditBtn() {
 
         // <button class="icon"><i class="fas fa-paint-brush"></i></button>
         let i = document.createElement("i");
@@ -48,14 +48,22 @@ $( document ).ready(function() {
         return button
     }
 
-    function addInfo(inputName,deleted = false) {
+    function generateBtnBlock() {
+        // <div class="btn-block">...</div>
+        let divTag = document.createElement("div");
+        divTag.append(generateEditBtn());
+        divTag.append(generateDelBtn());
+
+        divTag.classList.add("btn-block");
+
+        return divTag
+    }
+
+        function addInfo(inputName,deleted = false) {
         $('#input-' + inputName).parsley().on('field:success', function() {
             // In here, `this` is the parlsey instance of #some-input
             let to = document.getElementById('cv__' + inputName);
             to.textContent = this.value;
-            if (deleted) {
-                to.appendChild(generatedDelBtn());
-            }
         });
     }
 
@@ -69,7 +77,7 @@ $( document ).ready(function() {
             if ($('#input-' + inputName).parsley().isValid() && input.value !== "" ) {
 
                 let divTag = document.createElement("div");
-
+                divTag.classList.add("cv__info");
                 // create <i class="fas fa-globe-europe"></i>
                 let iTag = document.createElement("i");
                 iTag.classList.add("fas");
@@ -88,7 +96,7 @@ $( document ).ready(function() {
                 to.appendChild(divTag);
                 divTag.appendChild(iTag);
                 divTag.appendChild(linkTag);
-                divTag.appendChild(generatedDelBtn());
+                divTag.appendChild(generateBtnBlock());
             }
         });
     }
@@ -104,6 +112,7 @@ $( document ).ready(function() {
             if ($('#input-' + inputName).parsley().isValid() && $('#select-' + inputName).parsley().isValid() && input.value !== "") {
 
                 let divTag = document.createElement("div");
+                divTag.classList.add("cv__info");
 
                 // create <i class="fas"> &#x....; </i>
                 let iTag = document.createElement("i");
@@ -122,7 +131,7 @@ $( document ).ready(function() {
                 let to = document.getElementById('cv__' + inputName);
                 divTag.appendChild(iTag);
                 divTag.appendChild(linkTag);
-                divTag.appendChild(generatedDelBtn());
+                divTag.appendChild(generateBtnBlock());
                 to.appendChild(divTag);
             }
         });
@@ -154,7 +163,7 @@ $( document ).ready(function() {
                 // get the element to write inside
                 let to = document.getElementById('cv__' + inputName + "s");
                 divTag.appendChild(spanTag);
-                divTag.appendChild(generatedDelBtn());
+                divTag.appendChild(generateBtnBlock());
                 divTag.appendChild(progressTag);
                 to.appendChild(divTag);
             }
@@ -182,7 +191,7 @@ $( document ).ready(function() {
                 // get the element to write inside
                 let to = document.getElementById('cv__' + inputName + "s");
                 divTag.appendChild(smallTag);
-                divTag.appendChild(generatedDelBtn());
+                divTag.appendChild(generateBtnBlock());
                 to.appendChild(divTag);
             }
         });
@@ -199,7 +208,7 @@ $( document ).ready(function() {
                 // create <div> ... </div>
                 let divTag = document.createElement("div");
                 divTag.textContent = input.value;
-                divTag.appendChild(generatedDelBtn());
+                divTag.appendChild(generateBtnBlock());
 
                 // get the element to write inside
                 let to = document.getElementById('cv__' + inputName + "s");
@@ -228,7 +237,7 @@ $( document ).ready(function() {
                 // create <small> ... </small>
                 let smallTag = document.createElement("small");
                 smallTag.textContent = fromInput.value + " - "  + (toInput.value ===! "" ? toInput.value : "Current");
-                h2Tag.appendChild(generatedDelBtn());
+                h2Tag.appendChild(generateBtnBlock());
                 h2Tag.appendChild(smallTag); // <h2> ... <small> ... </small> </h2>
 
                 // create <h3> Company Name</h3>
@@ -259,7 +268,7 @@ $( document ).ready(function() {
                 divTag.appendChild(h3Tag);
                 divTag.appendChild(pTags);
                 divTag.appendChild(tagsBlock);
-                divTag.appendChild(generatedDelBtn());
+                divTag.appendChild(generateBtnBlock());
 
                 // get the element to write inside
                 let to = document.getElementById('cv__' + blockID + "s");
@@ -287,7 +296,7 @@ $( document ).ready(function() {
                 // create <h2> ... </h2>
                 let h2Tag = document.createElement("h2");
                 h2Tag.textContent = nameInput.value;
-                h2Tag.appendChild(generatedDelBtn());
+                h2Tag.appendChild(generateBtnBlock());
 
                 // create <small> ... </small>
                 let smallTag = document.createElement("small");
@@ -323,7 +332,7 @@ $( document ).ready(function() {
                 divTag.appendChild(h3Tag);
                 divTag.appendChild(pTags);
                 divTag.appendChild(tagsBlock);
-                divTag.appendChild(generatedDelBtn());
+                divTag.appendChild(generateBtnBlock());
 
                 // get the element to write inside
                 let to = document.getElementById('cv__' + blockID + "s");
@@ -349,7 +358,7 @@ $( document ).ready(function() {
                 // create <h2> ... </h2>
                 let h2Tag = document.createElement("h2");
                 h2Tag.textContent = degreeInput.value;
-                h2Tag.appendChild(generatedDelBtn());
+                h2Tag.appendChild(generateBtnBlock());
 
                 // create <small> ... </small>
                 let smallTag = document.createElement("small");
@@ -371,7 +380,7 @@ $( document ).ready(function() {
                 divTag.appendChild(h2Tag);
                 divTag.appendChild(h3Tag);
                 divTag.appendChild(pTags);
-                divTag.appendChild(generatedDelBtn());
+                divTag.appendChild(generateBtnBlock());
 
                 // get the element to write inside
                 let to = document.getElementById('cv__' + blockID + "s");
