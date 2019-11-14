@@ -289,12 +289,12 @@ $( document ).ready(function() {
 
                 // create <div class="cv__..." > ... </div>
                 let divTag = document.createElement("div");
+                divTag.classList.add("cv__info");
                 divTag.classList.add("cv__" + blockID);
                 divTag.appendChild(h2Tag);
                 divTag.appendChild(h3Tag);
                 divTag.appendChild(pTags);
                 divTag.appendChild(tagsBlock);
-                divTag.appendChild(generateBtnBlock());
 
                 // get the element to write inside
                 let to = document.getElementById('cv__' + blockID + "s");
@@ -353,12 +353,12 @@ $( document ).ready(function() {
 
                 // create <div class="cv__..." > ... </div>
                 let divTag = document.createElement("div");
+                divTag.classList.add("cv__info");
                 divTag.classList.add("cv__" + blockID);
                 divTag.appendChild(h2Tag);
                 divTag.appendChild(h3Tag);
                 divTag.appendChild(pTags);
                 divTag.appendChild(tagsBlock);
-                divTag.appendChild(generateBtnBlock());
 
                 // get the element to write inside
                 let to = document.getElementById('cv__' + blockID + "s");
@@ -403,10 +403,10 @@ $( document ).ready(function() {
                 // create <div class="cv__..." > ... </div>
                 let divTag = document.createElement("div");
                 divTag.classList.add("cv__" + blockID);
+                divTag.classList.add("cv__info");
                 divTag.appendChild(h2Tag);
                 divTag.appendChild(h3Tag);
                 divTag.appendChild(pTags);
-                divTag.appendChild(generateBtnBlock());
 
                 // get the element to write inside
                 let to = document.getElementById('cv__' + blockID + "s");
